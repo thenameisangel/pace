@@ -21,6 +21,8 @@
 		0BE040141DD1ACA60056A6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE040121DD1ACA60056A6A3 /* LaunchScreen.storyboard */; };
 		0BE0401F1DD1ACA60056A6A3 /* PaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE0401E1DD1ACA60056A6A3 /* PaceTests.swift */; };
 		0BE0402A1DD1ACA60056A6A3 /* PaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040291DD1ACA60056A6A3 /* PaceUITests.swift */; };
+		44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */; };
+		44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		0BE040251DD1ACA60056A6A3 /* PaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE040291DD1ACA60056A6A3 /* PaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceUITests.swift; sourceTree = "<group>"; };
 		0BE0402B1DD1ACA60056A6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunsTableViewController.swift; sourceTree = "<group>"; };
+		44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				0BE040151DD1ACA60056A6A3 /* Info.plist */,
 				0BE0400D1DD1ACA60056A6A3 /* Pace.xcdatamodeld */,
 				0B50E64D1DD4B1AE00543DD0 /* Pace-Bridging-Header.h */,
+				44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */,
+				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -283,9 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */,
 				0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */,
 				0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */,
 				0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */,
+				44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */,
 				0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */,
 				0BE0400F1DD1ACA60056A6A3 /* Pace.xcdatamodeld in Sources */,
 			);
@@ -379,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -419,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -437,6 +445,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.utexas.ylo.Pace;
@@ -456,6 +465,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.utexas.ylo.Pace;
