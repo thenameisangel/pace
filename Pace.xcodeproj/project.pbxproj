@@ -21,6 +21,7 @@
 		0BE040141DD1ACA60056A6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE040121DD1ACA60056A6A3 /* LaunchScreen.storyboard */; };
 		0BE0401F1DD1ACA60056A6A3 /* PaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE0401E1DD1ACA60056A6A3 /* PaceTests.swift */; };
 		0BE0402A1DD1ACA60056A6A3 /* PaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040291DD1ACA60056A6A3 /* PaceUITests.swift */; };
+		2823C42F1DD97BF100C88BE1 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */; };
 		44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */; };
 		44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		0BE040251DD1ACA60056A6A3 /* PaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE040291DD1ACA60056A6A3 /* PaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceUITests.swift; sourceTree = "<group>"; };
 		0BE0402B1DD1ACA60056A6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunsTableViewController.swift; sourceTree = "<group>"; };
 		44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 				0B50E64D1DD4B1AE00543DD0 /* Pace-Bridging-Header.h */,
 				44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */,
 				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
+				2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2823C42F1DD97BF100C88BE1 /* PlaylistViewController.swift in Sources */,
 				44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */,
 				0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */,
 				0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */,
