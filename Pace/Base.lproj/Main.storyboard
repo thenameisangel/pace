@@ -290,6 +290,24 @@
             </objects>
             <point key="canvasLocation" x="933" y="337"/>
         </scene>
+        <!--Playlist View Controller-->
+        <scene sceneID="alZ-DP-fLb">
+            <objects>
+                <viewController id="msX-i9-uvW" customClass="PlaylistViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ddJ-tC-ctW"/>
+                        <viewControllerLayoutGuide type="bottom" id="YyZ-9B-Z03"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="afS-rg-ASG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7mk-nz-zfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="994"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="bbS-JE-NFD">
             <objects>
