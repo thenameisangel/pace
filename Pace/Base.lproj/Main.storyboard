@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="msX-i9-uvW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="msX-i9-uvW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Run View Controller-->
         <scene sceneID="TeZ-JM-pAm">
             <objects>
-                <viewController id="py8-Kg-TYZ" sceneMemberID="viewController">
+                <viewController id="py8-Kg-TYZ" customClass="NewRunViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ye1-Za-ETX"/>
                         <viewControllerLayoutGuide type="bottom" id="qby-Fc-gCy"/>
@@ -75,6 +75,19 @@
                                 <state key="normal" title="Search for a song to match!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="songSearch:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="svU-lm-jIn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
+                                <rect key="frame" x="192" y="412" width="216" height="30"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="View Past Runs">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="4q9-Sk-cot"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,13 +99,22 @@
                             <constraint firstItem="Bga-4t-6yh" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="HRd-iQ-BI2"/>
                             <constraint firstItem="CCX-qW-ORu" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="PYs-fb-DbG"/>
                             <constraint firstItem="XGW-65-Juz" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="Qs1-oo-D1h"/>
+                            <constraint firstItem="GvI-HA-59e" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="SvQ-Hk-egU"/>
                             <constraint firstItem="GEz-Ed-cJF" firstAttribute="width" secondItem="pa6-79-Jbz" secondAttribute="width" id="Voy-MD-Hkc"/>
+                            <constraint firstItem="GvI-HA-59e" firstAttribute="top" secondItem="67q-9r-abs" secondAttribute="bottom" constant="15" id="cOg-7k-aYW"/>
                             <constraint firstItem="67q-9r-abs" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="erj-Jd-cRr"/>
                             <constraint firstItem="2jR-Mu-oaU" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="g08-2s-AYL"/>
                             <constraint firstItem="NaW-j7-3Aw" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="sgt-9v-GYc"/>
                             <constraint firstItem="57A-AY-Gtu" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="xh8-55-i9D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterHeightTxt" destination="2jR-Mu-oaU" id="nUC-NU-V39"/>
+                        <outlet property="enterTargetPaceTxt" destination="NaW-j7-3Aw" id="jPK-n2-34k"/>
+                        <outlet property="selectGenreTxt" destination="CCX-qW-ORu" id="Nxn-5J-Zhr"/>
+                        <outlet property="songSearchBtn" destination="67q-9r-abs" id="VdX-Sl-1sS"/>
+                        <outlet property="viewPastRunsBtn" destination="GvI-HA-59e" id="1zi-Om-qUJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfD-KU-PBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +133,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aWs-ax-Kw7" id="02F-9j-rrF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRu-Sq-pCv">
@@ -193,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="1657" y="-402"/>
         </scene>
-        <!--View Controller-->
+        <!--Run Tracker View Controller-->
         <scene sceneID="Qga-lo-7jz">
             <objects>
-                <viewController id="o9d-Hx-MQg" sceneMemberID="viewController">
+                <viewController id="o9d-Hx-MQg" customClass="RunTrackerViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OVh-GH-mgW"/>
                         <viewControllerLayoutGuide type="bottom" id="A3X-0E-W4O"/>
@@ -217,6 +239,9 @@
                                 <state key="normal" title="End Run">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="endRun:" destination="o9d-Hx-MQg" eventType="touchUpInside" id="bHu-PD-RUX"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Time elapsed displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-sp-5GC">
                                 <rect key="frame" x="180" y="113" width="240" height="35"/>
@@ -285,6 +310,13 @@
                             <constraint firstItem="YI4-fL-Bdi" firstAttribute="height" secondItem="3Zs-Vo-E1O" secondAttribute="height" id="zuK-5A-gOi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceRunLbl" destination="3Zs-Vo-E1O" id="cw8-6O-Mp4"/>
+                        <outlet property="endRunBtn" destination="5sh-du-f8o" id="H0D-Yh-M0c"/>
+                        <outlet property="songLbl" destination="5kZ-48-sS3" id="wC9-aS-8rA"/>
+                        <outlet property="targetPaceLbl" destination="YI4-fL-Bdi" id="K4H-Za-U6R"/>
+                        <outlet property="timeElapsedLbl" destination="yW5-sp-5GC" id="Ra9-3r-Jj3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwo-s4-XLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +348,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBy-ts-DMf" id="YFS-Kt-3UI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-hq-rTf">
@@ -372,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="945" y="994"/>
         </scene>
-        <!--View Controller-->
+        <!--Run Summary View Controller-->
         <scene sceneID="bbS-JE-NFD">
             <objects>
-                <viewController id="epv-aE-x1i" sceneMemberID="viewController">
+                <viewController id="epv-aE-x1i" customClass="RunSummaryViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="75w-w7-1fS"/>
                         <viewControllerLayoutGuide type="bottom" id="JLB-3n-caU"/>
@@ -432,6 +464,9 @@
                                 <state key="normal" title="View Playlist">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="viewPlaylist:" destination="epv-aE-x1i" eventType="touchUpInside" id="tlx-H2-bj7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,6 +481,12 @@
                             <constraint firstItem="rIp-9v-EL8" firstAttribute="height" secondItem="Nxk-7N-7gf" secondAttribute="height" id="zQY-Ts-tta"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="targetPaceLbl" destination="Tpy-vo-V27" id="mFu-cg-7Px"/>
+                        <outlet property="totalRunDistanceLbl" destination="rIp-9v-EL8" id="4Ue-LX-jZF"/>
+                        <outlet property="totalRunTimeLbl" destination="Nxk-7N-7gf" id="fSI-nv-hCx"/>
+                        <outlet property="viewPlaylistBtn" destination="8H8-AV-BLI" id="HuK-2z-agg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6J-YZ-T4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -512,7 +553,7 @@
                                         <rect key="frame" x="0.0" y="40" width="600" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6uV-jX-5st" id="gyD-Zv-FzV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="116.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FR-PP-ZMe">

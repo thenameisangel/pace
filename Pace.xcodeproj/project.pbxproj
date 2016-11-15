@@ -11,6 +11,9 @@
 		0B50E6491DD4AE4B00543DD0 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E6461DD4AE4A00543DD0 /* SpotifyAuthentication.framework */; };
 		0B50E64A1DD4AE4B00543DD0 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E6471DD4AE4A00543DD0 /* SpotifyMetadata.framework */; };
 		0B50E64C1DD4AF2A00543DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E64B1DD4AF2A00543DD0 /* AVFoundation.framework */; };
+		0B8C347B1DDAB4FE00123EBE /* RunSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */; };
+		0B8C347D1DDAB50400123EBE /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */; };
+		0B8C347F1DDAB50A00123EBE /* RunTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */; };
 		0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */; };
 		0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */; };
 		0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */; };
@@ -50,6 +53,9 @@
 		0B50E6471DD4AE4A00543DD0 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
 		0B50E64B1DD4AF2A00543DD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0B50E64D1DD4B1AE00543DD0 /* Pace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pace-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSummaryViewController.swift; sourceTree = "<group>"; };
+		0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
+		0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTrackerViewController.swift; sourceTree = "<group>"; };
 		0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongResultCell.swift; sourceTree = "<group>"; };
 		0BE040031DD1ACA60056A6A3 /* Pace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +148,9 @@
 				44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */,
 				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
 				2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */,
+				0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */,
+				0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */,
+				0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -299,9 +308,12 @@
 				44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */,
 				0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */,
 				0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */,
+				0B8C347D1DDAB50400123EBE /* NewRunViewController.swift in Sources */,
+				0B8C347F1DDAB50A00123EBE /* RunTrackerViewController.swift in Sources */,
 				2823C43B1DDA754B00C88BE1 /* PlaylistSongCell.swift in Sources */,
 				0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */,
 				44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */,
+				0B8C347B1DDAB4FE00123EBE /* RunSummaryViewController.swift in Sources */,
 				0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */,
 				0BE0400F1DD1ACA60056A6A3 /* Pace.xcdatamodeld in Sources */,
 			);
