@@ -25,7 +25,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SongResultCell")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -51,7 +50,4 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//    }
 }
