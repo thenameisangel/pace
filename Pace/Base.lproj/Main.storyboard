@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="msX-i9-uvW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMB-3w-qKe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -77,6 +77,7 @@
                                 </state>
                                 <connections>
                                     <action selector="songSearch:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="svU-lm-jIn"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ecQ-5i-KBb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
@@ -87,6 +88,18 @@
                                 </state>
                                 <connections>
                                     <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="4q9-Sk-cot"/>
+                                    <segue destination="Ug7-pL-jKE" kind="show" id="WRo-CR-E8s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
+                                <rect key="frame" x="192" y="458" width="216" height="30"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start a Run">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
+                                    <segue destination="o9d-Hx-MQg" kind="show" id="3bx-Ft-Pfw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfD-KU-PBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="-339"/>
+            <point key="canvasLocation" x="1745" y="-339"/>
         </scene>
         <!--Past Runs-->
         <scene sceneID="AnE-ep-uWE">
@@ -130,10 +143,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pastRunCell" rowHeight="121" id="aWs-ax-Kw7" customClass="PastRunTableViewCell" customModule="Pace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="121"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aWs-ax-Kw7" id="02F-9j-rrF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRu-Sq-pCv">
@@ -213,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wn6-WC-baW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="-402"/>
+            <point key="canvasLocation" x="2447" y="-339"/>
         </scene>
         <!--Run Tracker View Controller-->
         <scene sceneID="Qga-lo-7jz">
@@ -241,6 +254,7 @@
                                 </state>
                                 <connections>
                                     <action selector="endRun:" destination="o9d-Hx-MQg" eventType="touchUpInside" id="bHu-PD-RUX"/>
+                                    <segue destination="epv-aE-x1i" kind="show" id="nd9-3C-kxk"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Time elapsed displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-sp-5GC">
@@ -320,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwo-s4-XLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="337"/>
+            <point key="canvasLocation" x="933" y="1091"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="alZ-DP-fLb">
@@ -348,7 +362,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBy-ts-DMf" id="YFS-Kt-3UI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-hq-rTf">
@@ -402,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mk-nz-zfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="994"/>
+            <point key="canvasLocation" x="2339" y="1091"/>
         </scene>
         <!--Run Summary View Controller-->
         <scene sceneID="bbS-JE-NFD">
@@ -466,6 +480,7 @@
                                 </state>
                                 <connections>
                                     <action selector="viewPlaylist:" destination="epv-aE-x1i" eventType="touchUpInside" id="tlx-H2-bj7"/>
+                                    <segue destination="msX-i9-uvW" kind="show" id="auf-Lb-cqO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -490,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6J-YZ-T4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1630" y="337"/>
+            <point key="canvasLocation" x="1635" y="1091"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="Dve-Az-oLi">
@@ -504,11 +519,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXx-Fc-Yu1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXx-Fc-Yu1">
                                 <rect key="frame" x="87" y="236" width="427" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="WJN-os-sIz"/>
+                                    <constraint firstAttribute="width" constant="427" id="pUh-mV-CSX"/>
+                                </constraints>
                                 <state key="normal" image="loginButton"/>
                                 <connections>
                                     <action selector="loginWithSpotify:" destination="ujJ-ph-9xV" eventType="touchUpInside" id="CYD-cU-62D"/>
+                                    <segue destination="py8-Kg-TYZ" kind="show" id="rrI-Ot-UuL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -518,13 +538,14 @@
                             <constraint firstItem="WXx-Fc-Yu1" firstAttribute="centerX" secondItem="5L6-rI-Wng" secondAttribute="centerX" id="gFV-dq-c1X"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Bh5-GA-dKn"/>
                     <connections>
                         <outlet property="loginButton" destination="WXx-Fc-Yu1" id="06f-QW-7s2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymj-ce-dXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="-339"/>
+            <point key="canvasLocation" x="1057" y="-339"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -553,7 +574,7 @@
                                         <rect key="frame" x="0.0" y="40" width="600" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6uV-jX-5st" id="gyD-Zv-FzV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="116.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FR-PP-ZMe">
@@ -622,25 +643,25 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="245" y="1061"/>
+            <point key="canvasLocation" x="933" y="395"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="mvU-BJ-uum">
+        <scene sceneID="mUw-FA-Gep">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IGZ-Qr-7I4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WMB-3w-qKe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dAt-Aa-Qvg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FJn-7s-oT0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kOn-iU-Rtc"/>
+                        <segue destination="ujJ-ph-9xV" kind="relationship" relationship="rootViewController" id="R2D-LS-bxS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg3-uL-h2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCX-mn-c8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="337"/>
+            <point key="canvasLocation" x="245" y="-339"/>
         </scene>
     </scenes>
     <resources>
