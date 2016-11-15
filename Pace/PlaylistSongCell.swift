@@ -10,4 +10,7 @@ import UIKit
 
 class PlaylistSongCell: UITableViewCell {
 
+    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var albumLabel: UILabel!
 }
