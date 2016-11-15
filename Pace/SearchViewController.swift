@@ -11,8 +11,6 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
-    
     //create temp list of song objects
     let songs: [[String]] = [["Usher", "Burn", "Confessions"],
                  ["Drake", "Marvin's Room", "Take Care"],
@@ -27,7 +25,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SongResultCell")
+      //  self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SongResultCell")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -35,13 +33,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.songs.count)
         return self.songs.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell: SongResultCell = self.tableView.dequeueReusableCellWithIdentifier("SongResultCell", forIndexPath: indexPath) as! SongResultCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SongResultCell", forIndexPath: indexPath) as! SongResultCell
+        
         print(songs[indexPath.row][0])
         print(songs[indexPath.row][1])
         print(songs[indexPath.row][2])
