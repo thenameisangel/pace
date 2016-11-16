@@ -14,6 +14,7 @@
 		0B8C347B1DDAB4FE00123EBE /* RunSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */; };
 		0B8C347D1DDAB50400123EBE /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */; };
 		0B8C347F1DDAB50A00123EBE /* RunTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */; };
+		0B8C34811DDCDC2F00123EBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8C34801DDCDC2F00123EBE /* SystemConfiguration.framework */; };
 		0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */; };
 		0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */; };
 		0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSummaryViewController.swift; sourceTree = "<group>"; };
 		0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTrackerViewController.swift; sourceTree = "<group>"; };
+		0B8C34801DDCDC2F00123EBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongResultCell.swift; sourceTree = "<group>"; };
 		0BE040031DD1ACA60056A6A3 /* Pace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8C34811DDCDC2F00123EBE /* SystemConfiguration.framework in Frameworks */,
 				0B50E64C1DD4AF2A00543DD0 /* AVFoundation.framework in Frameworks */,
 				0B50E6481DD4AE4A00543DD0 /* SpotifyAudioPlayback.framework in Frameworks */,
 				0B50E64A1DD4AE4B00543DD0 /* SpotifyMetadata.framework in Frameworks */,
@@ -110,6 +113,7 @@
 		0BE03FFA1DD1ACA60056A6A3 = {
 			isa = PBXGroup;
 			children = (
+				0B8C34801DDCDC2F00123EBE /* SystemConfiguration.framework */,
 				0B50E64B1DD4AF2A00543DD0 /* AVFoundation.framework */,
 				0B50E6451DD4AE4A00543DD0 /* SpotifyAudioPlayback.framework */,
 				0B50E6461DD4AE4A00543DD0 /* SpotifyAuthentication.framework */,

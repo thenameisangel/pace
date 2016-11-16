@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
         //create URL to open Safari window
         
         //create authentication obj
-        //let auth = SPTAuth.defaultInstance()
+        let auth = SPTAuth.defaultInstance()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
