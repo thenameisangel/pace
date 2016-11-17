@@ -25,7 +25,24 @@ class HomeViewController: UIViewController {
         
         //session already exists
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
+            let sessionDataObj = sessionObj as! NSData
             
+            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+            
+            if !session.isValid() {
+                SPTAuth.defaultInstance().renewSession(session, callback: { (error:NSError!, session:SPTSession!) -> Void in
+                    if error == nil {
+                        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                        userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                        userDefaults.synchronize()
+                        
+//                        self.session = session
+                        //playUsingSession()
+                    } else {
+                        print("Error refreshing session")
+                    }
+                })
+            }
         } else {
             //session doesn't exist
             loginButton.hidden = false
