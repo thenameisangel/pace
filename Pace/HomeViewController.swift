@@ -9,18 +9,45 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    let clientID = "7884d212f6ef45b5b4691688644f1217"
+    let callURL = "pace://returnAfterLogin"
+    let tokenSwapURL = "http://localhost:1234/swap"
+    let tokenRefreshServiceURL = "http://localhost:1234/refresh"
 
     @IBOutlet weak var loginButton: UIButton!
-    @IBAction func loginWithSpotify(sender: AnyObject) {
-        //create URL to open Safari window
-        
-        //create authentication obj
-        let auth = SPTAuth.defaultInstance()
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loginButton.hidden = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "loginSuccessful", object: nil)
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        //session already exists
+        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
+            
+        } else {
+            //session doesn't exist
+            loginButton.hidden = false
+        }
+        
     }
+    
+    func updateAfterFirstLogin() {
+    
+        loginButton.hidden = true
+        
+        
+    }
+    
+    @IBAction func loginWithSpotify(sender: AnyObject) {
+        
+        //create URL to open Safari window
+        let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
+        
+        UIApplication.sharedApplication().openURL(loginURL)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -12,6 +12,11 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let clientID = "7884d212f6ef45b5b4691688644f1217"
+    let callURL = "pace://returnAfterLogin"
+    let tokenSwapURL = "http://localhost:1234/swap"
+    let tokenRefreshServiceURL = "http://localhost:1234/refresh"
 
     var window: UIWindow?
 
@@ -19,6 +24,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        if SPTAuth.defaultInstance().canHandleURL(url) {
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error: NSError!, session:SPTSession!) -> Void in
+                if error != nil {
+                    print("Authentication Error")
+                    return
+                }
+                //used for small key:value pairs
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setBool(true, forKey: "premiumPurchased")
+                
+                //create session object and set it as a user default
+                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                userDefaults.synchronize()
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object:nil)
+            })
+        }
+        
+        return false
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
