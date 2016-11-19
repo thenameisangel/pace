@@ -3,19 +3,13 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-<<<<<<< HEAD
-=======
 //import Spotify Authentication Framework
->>>>>>> sdk-integration
 #import <SpotifyAuthentication/SpotifyAuthentication.h>
 #import <SpotifyAuthentication/SPTAuth.h>
 #import <SpotifyAuthentication/SPTAuthViewController.h>
 #import <SpotifyAuthentication/SPTConnectButton.h>
 #import <SpotifyAuthentication/SPTEmbeddedImages.h>
 #import <SpotifyAuthentication/SPTSession.h>
-<<<<<<< HEAD
-#import <SpotifyAuthentication/SPTStoreViewController.h>
-=======
 #import <SpotifyAuthentication/SPTStoreViewController.h>
 
 //import SpotifyAudioPlayback Framework
@@ -57,4 +51,3 @@
 #import <SpotifyMetadata/SPTTrackProvider.h>
 #import <SpotifyMetadata/SPTUser.h>
 #import <SpotifyMetadata/SPTYourMusic.h>
->>>>>>> sdk-integration

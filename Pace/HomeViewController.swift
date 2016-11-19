@@ -12,24 +12,18 @@ class HomeViewController: UIViewController {
     let callURL = "pace://returnAfterLogin"
     let tokenSwapURL = "http://localhost:1234/swap"
     let tokenRefreshServiceURL = "http://localhost:1234/refresh"
-<<<<<<< HEAD
 
-=======
     
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     
->>>>>>> sdk-integration
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.hidden = true
-<<<<<<< HEAD
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "loginSuccessful", object: nil)
-=======
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
->>>>>>> sdk-integration
+
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -45,23 +39,16 @@ class HomeViewController: UIViewController {
                         let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
                         userDefaults.setObject(sessionData, forKey: "SpotifySession")
                         userDefaults.synchronize()
-                        
-<<<<<<< HEAD
-//                        self.session = session
-=======
+
                         self.session = session
->>>>>>> sdk-integration
                         //playUsingSession()
                     } else {
                         print("Error refreshing session")
                     }
                 })
-<<<<<<< HEAD
-=======
             } else {
                 print("session valid")
                 //playingUsingSession()
->>>>>>> sdk-integration
             }
         } else {
             //session doesn't exist
@@ -71,19 +58,11 @@ class HomeViewController: UIViewController {
     }
     
     func updateAfterFirstLogin() {
-<<<<<<< HEAD
-    
-=======
-        
->>>>>>> sdk-integration
+
         loginButton.hidden = true
         
-        
     }
-    
-<<<<<<< HEAD
-=======
-    
+
     func playUsingSession(sessionObj:SPTSession!) {
         //check if player is nil, create the player
         if player == nil {
@@ -92,7 +71,6 @@ class HomeViewController: UIViewController {
         
     }
     
->>>>>>> sdk-integration
     @IBAction func loginWithSpotify(sender: AnyObject) {
         
         //create URL to open Safari window
@@ -100,13 +78,7 @@ class HomeViewController: UIViewController {
         
         UIApplication.sharedApplication().openURL(loginURL)
     }
-<<<<<<< HEAD
 
-
-=======
-    
-    
->>>>>>> sdk-integration
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
