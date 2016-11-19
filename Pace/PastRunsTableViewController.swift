@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class PastRunsTableViewController: UITableViewController {
     
     //temp data for fields
-    let distanceArray: [Double] = [1.0, 0.75, 0.80, 0.65, 0.25, 0.60]
+    let runArray: [NSManagedObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +38,21 @@ class PastRunsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return distanceArray.count
+        return runArray.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pastRunCell", forIndexPath: indexPath) as! PastRunTableViewCell
         
-        cell.distanceLbl.text = String(distanceArray[indexPath.row])
+        let run = runArray[indexPath.row]
+        
+        cell.runDateLbl.text = run.valueForKey("date") as? String
+        cell.distanceLbl.text = run.valueForKey("distance") as? String
+        cell.paceLbl.text = run.valueForKey("pace") as? String
+        cell.timeLbl.text = run.valueForKey("time") as? String
 
+        
         return cell
     }
 
