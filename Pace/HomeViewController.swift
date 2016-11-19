@@ -64,8 +64,10 @@ class HomeViewController: UIViewController {
     
     
     func playUsingSession(sessionObj:SPTSession!) {
-    
-        
+        //check if player is nil, create the player
+        if player == nil {
+            player = SPTAudioStreamingController()
+        }
         
     }
     
