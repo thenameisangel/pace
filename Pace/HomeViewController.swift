@@ -62,11 +62,14 @@ class HomeViewController: UIViewController {
         loginButton.hidden = true
         
     }
+    
+    private
 
     func playUsingSession(sessionObj:SPTSession!) {
         //check if player is nil, create the player
         if player == nil {
-            player = SPTAudioStreamingController()
+//            player = SPTAudioStreamingController().startWithClientId(clientID, audioController: SPTCoreAudioController!, allowCaching: true)
+            
         }
         
     }
