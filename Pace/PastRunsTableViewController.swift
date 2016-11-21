@@ -11,11 +11,20 @@ import CoreData
 
 class PastRunsTableViewController: UITableViewController {
     
-    //temp data for fields
-    let runArray: [NSManagedObject] = []
+    var runArray: [NSManagedObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let moc = managedObjectContext
+        let runsFetch = NSFetchRequest(entityName: "Run")
+        
+        do {
+            runArray = try moc.executeFetchRequest(runsFetch) as! [NSManagedObject]
+        } catch {
+            fatalError("Failed to fetch runs: \(error)")
+        }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class RunTrackerViewController: UIViewController {
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     @IBOutlet weak var songLbl: UITextView!
     @IBOutlet weak var distanceRunLbl: UITextView!
@@ -17,5 +20,15 @@ class RunTrackerViewController: UIViewController {
     @IBOutlet weak var targetPaceLbl: UITextView!
     @IBOutlet weak var endRunBtn: UIButton!
     @IBAction func endRun(sender: AnyObject) {
+        let run = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext)
+        run.setValue(NSDate(), forKey: "date")
+        run.setValue(Double(distanceRunLbl.text), forKey: "distance")
+        run.setValue(Double(targetPaceLbl.text), forKey: "pace")
+        run.setValue(Double(timeElapsedLbl.text), forKey: "time")
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
 }
