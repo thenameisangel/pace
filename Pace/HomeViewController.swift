@@ -61,12 +61,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func loginWithSpotify(sender: AnyObject) {
-        let auth = SPTAuth.defaultInstance()
-        
-        
-        //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
-        //myVC.stringPassed = myLabel.text!
-        //navigationController?.pushViewController(myVC, animated: true)
+//        let auth = SPTAuth.defaultInstance()
         
         //create URL to open Safari window
         let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")

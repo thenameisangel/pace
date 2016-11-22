@@ -11,10 +11,14 @@ import UIKit
 import CoreData
 
 class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
-    var session: SPTSession!
+    
+    let clientID = "7884d212f6ef45b5b4691688644f1217"
+    let callURL = "pace://returnAfterLogin"
+    let tokenSwapURL = "http://localhost:1234/swap"
+    let tokenRefreshServiceURL = "http://localhost:1234/refresh"
+
     var player: SPTAudioStreamingController?
-
-
+    let homeVC:HomeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
     
     @IBOutlet weak var songTitleLbl: UITextView!
     @IBOutlet weak var artistLbl: UITextView!
@@ -54,23 +58,20 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     func loginToPlayer() {
         
-       let auth: SPTAuth = SPTAuth.defaultInstance()
-        
-   //     let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! HomeViewController
-        
+//       let auth: SPTAuth = SPTAuth.defaultInstance()
         
         if player == nil {
             player = SPTAudioStreamingController.sharedInstance()
             
             do {
-                try player?.startWithClientId(auth.clientID)
+                try player?.startWithClientId(clientID)
             } catch {
                 print("Player could not be initialized")
             }
         }
         player?.delegate = self
         player?.playbackDelegate = self
-        player?.loginWithAccessToken(auth.session.accessToken)
+        player?.loginWithAccessToken(homeVC.session.accessToken)
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
