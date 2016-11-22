@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 import CoreData
 
-class RunTrackerViewController: UIViewController {
+class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
+    var session: SPTSession!
+    var player: SPTAudioStreamingController?
+
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    @IBOutlet weak var songLbl: UITextView!
+    @IBOutlet weak var songTitleLbl: UITextView!
+    @IBOutlet weak var artistLbl: UITextView!
     @IBOutlet weak var distanceRunLbl: UITextView!
     @IBOutlet weak var timeElapsedLbl: UITextView!
     @IBOutlet weak var targetPaceLbl: UITextView!
@@ -31,4 +33,49 @@ class RunTrackerViewController: UIViewController {
             fatalError("Failure to save context: \(error)")
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginToPlayer()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func startNextSong() {
+        player!.playSpotifyURI("spotify:track:4TkGhMYlkcbxCMj3pny9mU", startingWithIndex: 0, startingWithPosition: 0, callback: {(error: NSError?) in
+            if error != nil {
+                print("Unable to play song")
+            }
+        })
+    }
+    
+    func loginToPlayer() {
+        let auth: SPTAuth = SPTAuth.defaultInstance()
+        
+        if player == nil {
+            player = SPTAudioStreamingController.sharedInstance()
+            
+            do {
+                try player?.startWithClientId(auth.clientID)
+            } catch {
+                print("Player could not be initialized")
+            }
+        }
+        player?.delegate = self
+        player?.playbackDelegate = self
+        player?.loginWithAccessToken(auth.session.accessToken)
+    }
+    
+    func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
+        startNextSong()
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveError error: NSError!) {
+        print(error)
+    }
+    
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 }

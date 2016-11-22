@@ -12,12 +12,9 @@ class HomeViewController: UIViewController {
     let callURL = "pace://returnAfterLogin"
     let tokenSwapURL = "http://localhost:1234/swap"
     let tokenRefreshServiceURL = "http://localhost:1234/refresh"
-
-    
-    var session:SPTSession!
-    var player:SPTAudioStreamingController?
     
     @IBOutlet weak var loginButton: UIButton!
+    var session:SPTSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,18 +60,8 @@ class HomeViewController: UIViewController {
         
     }
     
-    private
-
-    func playUsingSession(sessionObj:SPTSession!) {
-        //check if player is nil, create the player
-        if player == nil {
-//            player = SPTAudioStreamingController().startWithClientId(clientID, audioController: SPTCoreAudioController!, allowCaching: true)
-            
-        }
-        
-    }
-    
     @IBAction func loginWithSpotify(sender: AnyObject) {
+//        let auth = SPTAuth.defaultInstance()
         
         //create URL to open Safari window
         let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")

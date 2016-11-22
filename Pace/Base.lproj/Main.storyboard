@@ -302,18 +302,28 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Song Title - Artist" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3">
-                                <rect key="frame" x="180" y="329" width="240" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-zK-EWf" userLabel="SongLbl">
+                                <rect key="frame" x="180" y="329" width="239" height="50"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Artist" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3" userLabel="ArtistLbl">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Song Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-dG-F0t" userLabel="SongTitleLbl">
+                                        <rect key="frame" x="117" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yW5-sp-5GC" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="0zU-fF-BIY"/>
                             <constraint firstItem="QtU-7g-RZd" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="1Yt-wg-jvd"/>
-                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="height" secondItem="5kZ-48-sS3" secondAttribute="height" id="9Kd-WY-1wL"/>
                             <constraint firstItem="3Zs-Vo-E1O" firstAttribute="height" secondItem="yW5-sp-5GC" secondAttribute="height" id="FOA-Be-mpR"/>
                             <constraint firstItem="TiA-Br-qmw" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="FXH-C5-w1s"/>
                             <constraint firstItem="YI4-fL-Bdi" firstAttribute="width" secondItem="3Zs-Vo-E1O" secondAttribute="width" id="HWr-UN-I6o"/>
@@ -321,17 +331,17 @@
                             <constraint firstItem="3Zs-Vo-E1O" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="Q5G-0u-X3Y"/>
                             <constraint firstItem="JhF-Fa-HJg" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="RcY-AU-tGB"/>
                             <constraint firstItem="3Zs-Vo-E1O" firstAttribute="width" secondItem="yW5-sp-5GC" secondAttribute="width" id="Umk-FV-dGk"/>
-                            <constraint firstItem="5kZ-48-sS3" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="Zpx-Iv-THY"/>
                             <constraint firstItem="YI4-fL-Bdi" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="cqb-xa-Qwr"/>
+                            <constraint firstItem="6B9-zK-EWf" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="j3Q-se-G1w"/>
                             <constraint firstItem="5sh-du-f8o" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="mFg-ph-SaY"/>
-                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="width" secondItem="5kZ-48-sS3" secondAttribute="width" id="xYg-T9-LTu"/>
                             <constraint firstItem="YI4-fL-Bdi" firstAttribute="height" secondItem="3Zs-Vo-E1O" secondAttribute="height" id="zuK-5A-gOi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="artistLbl" destination="5kZ-48-sS3" id="bUj-rD-OfS"/>
                         <outlet property="distanceRunLbl" destination="3Zs-Vo-E1O" id="cw8-6O-Mp4"/>
                         <outlet property="endRunBtn" destination="5sh-du-f8o" id="H0D-Yh-M0c"/>
-                        <outlet property="songLbl" destination="5kZ-48-sS3" id="wC9-aS-8rA"/>
+                        <outlet property="songTitleLbl" destination="Wev-dG-F0t" id="Hyg-wM-bcj"/>
                         <outlet property="targetPaceLbl" destination="YI4-fL-Bdi" id="K4H-Za-U6R"/>
                         <outlet property="timeElapsedLbl" destination="yW5-sp-5GC" id="Ra9-3r-Jj3"/>
                     </connections>
