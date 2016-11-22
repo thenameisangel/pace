@@ -14,6 +14,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     var session: SPTSession!
     var player: SPTAudioStreamingController?
 
+
     
     @IBOutlet weak var songTitleLbl: UITextView!
     @IBOutlet weak var artistLbl: UITextView!
@@ -52,7 +53,11 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     }
     
     func loginToPlayer() {
-        let auth: SPTAuth = SPTAuth.defaultInstance()
+        
+       let auth: SPTAuth = SPTAuth.defaultInstance()
+        
+   //     let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! HomeViewController
+        
         
         if player == nil {
             player = SPTAudioStreamingController.sharedInstance()
