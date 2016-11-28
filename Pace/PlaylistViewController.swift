@@ -12,6 +12,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    var targetPace: String!
     
     //create temp list of song objects
     let songs: [[String]] = [["Usher", "Burn", "Confessions"],
@@ -47,5 +48,12 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         cell.albumLabel.text = songs[indexPath.row][1]
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startRunSegue"{
+            let nextScene = segue.destinationViewController as! RunTrackerViewController
+            nextScene.targetPace = targetPace
+        }
     }
 }

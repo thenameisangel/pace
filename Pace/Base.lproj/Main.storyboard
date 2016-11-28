@@ -18,70 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Mu-oaU">
-                                <rect key="frame" x="252" y="123" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Mu-oaU">
+                                <rect key="frame" x="80" y="211" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEz-Ed-cJF">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEz-Ed-cJF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Start a New Run!" id="Ch7-3b-bXh"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter height in inches:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-ij-E4Y">
-                                <rect key="frame" x="250" y="94" width="101" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter height in inches:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-ij-E4Y">
+                                <rect key="frame" x="78" y="182" width="101" height="21"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
-                                <rect key="frame" x="252" y="300" width="97" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter target pace (minutes per mile):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
+                                <rect key="frame" x="374" y="182" width="196" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select genre:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-65-Juz">
+                                <rect key="frame" x="249" y="230" width="102" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-qW-ORu">
+                                <rect key="frame" x="252" y="259" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter target pace (minutes per mile):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
-                                <rect key="frame" x="202" y="271" width="196" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-4t-6yh">
+                                <rect key="frame" x="286" y="201" width="28" height="21"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select genre:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-65-Juz">
-                                <rect key="frame" x="249" y="176" width="102" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-qW-ORu">
-                                <rect key="frame" x="252" y="205" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57A-AY-Gtu">
-                                <rect key="frame" x="276" y="338" width="48" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-4t-6yh">
-                                <rect key="frame" x="286" y="347" width="28" height="12"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67q-9r-abs">
-                                <rect key="frame" x="192" y="367" width="216" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67q-9r-abs">
+                                <rect key="frame" x="20" y="313" width="216" height="30"/>
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.95686274509803915" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Search for a song to match!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="songSearch:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="svU-lm-jIn"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="FBV-V3-ld0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="FBV-V3-ld0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
-                                <rect key="frame" x="192" y="412" width="216" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
+                                <rect key="frame" x="192" y="450" width="216" height="30"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="View Past Runs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,44 +80,75 @@
                                     <segue destination="Ug7-pL-jKE" kind="show" id="1SZ-rq-Tcv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
-                                <rect key="frame" x="192" y="458" width="216" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
+                                <rect key="frame" x="364" y="313" width="216" height="30"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start a Run">
+                                <state key="normal" title="Generate Playlist">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
                                     <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
-                                    <segue destination="msX-i9-uvW" kind="show" id="QXf-EF-GIJ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dis-wL-msx" customClass="LineSeparatorView" customModule="Pace" customModuleProvider="target">
+                                <rect key="frame" x="286" y="72" width="28" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y5T-uq-5qo" customClass="LineSeparatorView" customModule="Pace" customModuleProvider="target">
+                                <rect key="frame" x="286" y="297" width="28" height="145"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
+                                <rect key="frame" x="424" y="211" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PUh-9t-hoN" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="1d3-aq-DMi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GEz-Ed-cJF" secondAttribute="trailing" constant="-20" id="7wB-73-zEl"/>
-                            <constraint firstItem="GEz-Ed-cJF" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="93R-Y7-lbh"/>
-                            <constraint firstItem="cgZ-dH-CiS" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="Col-wN-Wdw"/>
-                            <constraint firstItem="VgB-ij-E4Y" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="HMq-XE-Zdh"/>
-                            <constraint firstItem="Bga-4t-6yh" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="HRd-iQ-BI2"/>
-                            <constraint firstItem="CCX-qW-ORu" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="PYs-fb-DbG"/>
-                            <constraint firstItem="XGW-65-Juz" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="Qs1-oo-D1h"/>
-                            <constraint firstItem="GvI-HA-59e" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="SvQ-Hk-egU"/>
-                            <constraint firstItem="GEz-Ed-cJF" firstAttribute="width" secondItem="pa6-79-Jbz" secondAttribute="width" id="Voy-MD-Hkc"/>
-                            <constraint firstItem="GvI-HA-59e" firstAttribute="top" secondItem="67q-9r-abs" secondAttribute="bottom" constant="15" id="cOg-7k-aYW"/>
-                            <constraint firstItem="67q-9r-abs" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="erj-Jd-cRr"/>
-                            <constraint firstItem="2jR-Mu-oaU" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="g08-2s-AYL"/>
-                            <constraint firstItem="PUh-9t-hoN" firstAttribute="top" secondItem="GvI-HA-59e" secondAttribute="bottom" constant="16" id="my9-49-9VL"/>
-                            <constraint firstItem="NaW-j7-3Aw" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="sgt-9v-GYc"/>
-                            <constraint firstItem="57A-AY-Gtu" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="xh8-55-i9D"/>
+                            <constraint firstItem="VgB-ij-E4Y" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="58" id="0Oe-3m-bvZ"/>
+                            <constraint firstItem="GvI-HA-59e" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="2wO-GU-3pb"/>
+                            <constraint firstItem="XGW-65-Juz" firstAttribute="top" secondItem="Bga-4t-6yh" secondAttribute="bottom" constant="8" id="4Ao-lB-wpB"/>
+                            <constraint firstItem="GvI-HA-59e" firstAttribute="height" secondItem="PUh-9t-hoN" secondAttribute="height" id="7cb-rb-sCK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PUh-9t-hoN" secondAttribute="trailing" id="7fK-MH-fi3"/>
+                            <constraint firstItem="qby-Fc-gCy" firstAttribute="top" secondItem="67q-9r-abs" secondAttribute="bottom" constant="257" id="8IK-kI-oqG"/>
+                            <constraint firstItem="2jR-Mu-oaU" firstAttribute="centerX" secondItem="VgB-ij-E4Y" secondAttribute="centerX" id="AbI-Rr-njp"/>
+                            <constraint firstItem="NaW-j7-3Aw" firstAttribute="top" secondItem="cgZ-dH-CiS" secondAttribute="bottom" constant="8" id="B7g-tf-4d6"/>
+                            <constraint firstItem="2jR-Mu-oaU" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="60" id="FoH-8y-mKT"/>
+                            <constraint firstItem="qby-Fc-gCy" firstAttribute="top" secondItem="GvI-HA-59e" secondAttribute="bottom" constant="120" id="HPi-gC-HuD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cgZ-dH-CiS" secondAttribute="trailing" constant="10" id="J4c-aH-OLt"/>
+                            <constraint firstItem="Bga-4t-6yh" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="137" id="Jbm-FC-7xg"/>
+                            <constraint firstItem="VgB-ij-E4Y" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="118" id="Pyu-VF-ec2"/>
+                            <constraint firstItem="XGW-65-Juz" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="RgY-Z7-SuW"/>
+                            <constraint firstItem="y5T-uq-5qo" firstAttribute="leading" secondItem="67q-9r-abs" secondAttribute="trailing" constant="50" id="SXN-CB-BCu"/>
+                            <constraint firstItem="qby-Fc-gCy" firstAttribute="top" secondItem="PUh-9t-hoN" secondAttribute="bottom" constant="257" id="Utb-H5-MLC"/>
+                            <constraint firstItem="PUh-9t-hoN" firstAttribute="centerX" secondItem="cgZ-dH-CiS" secondAttribute="centerX" id="V8i-KU-FaQ"/>
+                            <constraint firstItem="PUh-9t-hoN" firstAttribute="leading" secondItem="y5T-uq-5qo" secondAttribute="trailing" constant="50" id="XGL-gu-emq"/>
+                            <constraint firstItem="dis-wL-msx" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="YCX-1a-tkt"/>
+                            <constraint firstItem="CCX-qW-ORu" firstAttribute="height" secondItem="NaW-j7-3Aw" secondAttribute="height" id="gvI-pw-eQ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NaW-j7-3Aw" secondAttribute="trailing" constant="59" id="hZ2-OC-zgx"/>
+                            <constraint firstItem="67q-9r-abs" firstAttribute="centerX" secondItem="VgB-ij-E4Y" secondAttribute="centerX" id="kTn-of-wnX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="67q-9r-abs" secondAttribute="leading" id="lum-E1-MbZ"/>
+                            <constraint firstItem="2jR-Mu-oaU" firstAttribute="top" secondItem="VgB-ij-E4Y" secondAttribute="bottom" constant="8" id="njh-PW-FdB"/>
+                            <constraint firstItem="cgZ-dH-CiS" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="118" id="pCn-Y4-NA0"/>
+                            <constraint firstItem="Bga-4t-6yh" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="rgg-hs-BYs"/>
+                            <constraint firstItem="67q-9r-abs" firstAttribute="height" secondItem="GvI-HA-59e" secondAttribute="height" id="rkB-zm-jZJ"/>
+                            <constraint firstItem="2jR-Mu-oaU" firstAttribute="height" secondItem="CCX-qW-ORu" secondAttribute="height" id="tCx-qA-aNl"/>
+                            <constraint firstItem="NaW-j7-3Aw" firstAttribute="centerX" secondItem="cgZ-dH-CiS" secondAttribute="centerX" id="vXo-Gy-2H1"/>
+                            <constraint firstItem="CCX-qW-ORu" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="wT2-br-bOZ"/>
+                            <constraint firstItem="y5T-uq-5qo" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="wfX-Nh-q8l"/>
+                            <constraint firstItem="CCX-qW-ORu" firstAttribute="top" secondItem="XGW-65-Juz" secondAttribute="bottom" constant="8" id="zAP-2n-fmq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="enterHeightTxt" destination="2jR-Mu-oaU" id="nUC-NU-V39"/>
                         <outlet property="enterTargetPaceTxt" destination="NaW-j7-3Aw" id="jPK-n2-34k"/>
+                        <outlet property="newPlaylistBtn" destination="PUh-9t-hoN" id="NoC-PS-QGm"/>
                         <outlet property="selectGenreTxt" destination="CCX-qW-ORu" id="Nxn-5J-Zhr"/>
                         <outlet property="songSearchBtn" destination="67q-9r-abs" id="VdX-Sl-1sS"/>
                         <outlet property="viewPastRunsBtn" destination="GvI-HA-59e" id="1zi-Om-qUJ"/>
+                        <segue destination="msX-i9-uvW" kind="show" identifier="newRunPlaylistSegue" id="Tzi-a6-tLF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfD-KU-PBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,7 +277,7 @@
                                 </state>
                                 <connections>
                                     <action selector="endRun:" destination="o9d-Hx-MQg" eventType="touchUpInside" id="bHu-PD-RUX"/>
-                                    <segue destination="epv-aE-x1i" kind="show" id="nd9-3C-kxk"/>
+                                    <segue destination="epv-aE-x1i" kind="show" identifier="endRunSegue" id="nd9-3C-kxk"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Time elapsed displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-sp-5GC">
@@ -367,7 +387,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistSongCell" rowHeight="99" id="fBy-ts-DMf" customClass="PlaylistSongCell" customModule="Pace" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="99"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBy-ts-DMf" id="YFS-Kt-3UI">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="98.5"/>
@@ -417,7 +437,7 @@
                     <navigationItem key="navigationItem" title="Playlist" id="cv9-GS-dET">
                         <barButtonItem key="rightBarButtonItem" title="Start Run" id="O8j-gT-WXo">
                             <connections>
-                                <segue destination="o9d-Hx-MQg" kind="show" id="eNs-MM-BfL"/>
+                                <segue destination="o9d-Hx-MQg" kind="show" identifier="startRunSegue" id="eNs-MM-BfL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -653,7 +673,7 @@
                                             <outlet property="albumTitleLbl" destination="n5m-yD-wQr" id="c58-cU-fSg"/>
                                             <outlet property="artistNameLbl" destination="Tkw-LG-BbM" id="AQ2-ez-Y5m"/>
                                             <outlet property="songTitleLbl" destination="1FR-PP-ZMe" id="rSk-66-PYa"/>
-                                            <segue destination="msX-i9-uvW" kind="show" id="Qwd-UR-73m"/>
+                                            <segue destination="msX-i9-uvW" kind="show" identifier="songSelectSegue" id="Qwd-UR-73m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -689,7 +709,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1765" y="409"/>
+            <point key="canvasLocation" x="1722" y="409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mUw-FA-Gep">
@@ -714,7 +734,7 @@
         <image name="loginButton" width="2362" height="708"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k3O-e2-dvW"/>
         <segue reference="nd9-3C-kxk"/>
+        <segue reference="Tzi-a6-tLF"/>
     </inferredMetricsTieBreakers>
 </document>

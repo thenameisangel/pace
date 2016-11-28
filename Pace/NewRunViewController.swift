@@ -16,8 +16,24 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var enterTargetPaceTxt: UITextField!
     @IBOutlet weak var songSearchBtn: UIButton!
     @IBOutlet weak var viewPastRunsBtn: UIButton!
+    @IBOutlet weak var newPlaylistBtn: UIButton!
     @IBAction func songSearch(sender: AnyObject) {
     }
     @IBAction func viewPastRuns(sender: AnyObject) {
+    }
+    var targetPace:String!
+    @IBAction func viewNewPlaylist(sender: AnyObject) {
+        targetPace = (enterTargetPaceTxt.text)!.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        if targetPace != "" {
+            performSegueWithIdentifier("newRunPlaylistSegue", sender: nil)
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newRunPlaylistSegue"{
+            let nextScene = segue.destinationViewController as? PlaylistViewController
+            nextScene?.targetPace = targetPace
+        }
     }
 }

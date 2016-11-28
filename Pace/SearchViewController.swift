@@ -50,4 +50,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "songSelectSegue"{
+            let nextScene = segue.destinationViewController as? PlaylistViewController
+        }
+    }
+
+    
 }

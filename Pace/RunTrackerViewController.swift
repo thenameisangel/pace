@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CoreData
+import CoreLocation
+import HealthKit
 
 class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     
@@ -27,25 +29,71 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     @IBOutlet weak var targetPaceLbl: UITextView!
     @IBOutlet weak var endRunBtn: UIButton!
     @IBAction func endRun(sender: AnyObject) {
-        let run = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext)
-        run.setValue(NSDate(), forKey: "date")
-        run.setValue(Double(distanceRunLbl.text), forKey: "distance")
-        run.setValue(Double(targetPaceLbl.text), forKey: "pace")
-        run.setValue(Double(timeElapsedLbl.text), forKey: "time")
+        let savedRun = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext)
+        savedRun.setValue(NSDate(), forKey: "date")
+        savedRun.setValue(Double(distance), forKey: "distance")
+        savedRun.setValue(Double(targetPace), forKey: "pace")
+        savedRun.setValue(Double(seconds), forKey: "time")
         do {
             try managedObjectContext.save()
         } catch {
             fatalError("Failure to save context: \(error)")
         }
     }
+    var targetPace: String!
+    
+    var seconds = 0.0
+    var distance = 0.0
+    
+    lazy var locationManager: CLLocationManager = {
+        var _locationManager = CLLocationManager()
+        _locationManager.delegate = self
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        _locationManager.activityType = .Fitness
+        
+        // Movement threshold for new events
+        _locationManager.distanceFilter = 10.0
+        return _locationManager
+    }()
+    
+    lazy var locations = [CLLocation]()
+    lazy var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginToPlayer()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        locationManager.requestAlwaysAuthorization()
+        seconds = 0.0
+        distance = 0.0
+        locations.removeAll(keepCapacity: false)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+        startLocationUpdates()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func eachSecond(timer: NSTimer) {
+        seconds += 1
+        let secondsQuantity = HKQuantity(unit: HKUnit.secondUnit(), doubleValue: seconds)
+        timeElapsedLbl.text = secondsQuantity.description
+        let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(), doubleValue: distance)
+        distanceRunLbl.text = distanceQuantity.description
+        targetPaceLbl.text = targetPace + " minutes per mile"
+    }
+    
+    func startLocationUpdates() {
+        // Here, the location manager will be lazily instantiated
+        locationManager.startUpdatingLocation()
     }
     
     func startNextSong() {
@@ -71,7 +119,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         }
         player?.delegate = self
         player?.playbackDelegate = self
-        player?.loginWithAccessToken(homeVC.session.accessToken)
+//        player?.loginWithAccessToken(homeVC.session.accessToken)
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
@@ -84,4 +132,33 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "endRunSegue"{
+            let nextScene = segue.destinationViewController as? RunSummaryViewController
+            nextScene!.seconds = seconds
+            nextScene!.distance = distance
+            nextScene!.targetPace = Double(targetPace)
+        }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension RunTrackerViewController: CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations as [CLLocation] {
+            if location.horizontalAccuracy < 20 {
+                //update distance
+                if self.locations.count > 0 {
+                    distance += location.distanceFromLocation(self.locations.last!)
+                }
+                
+                //save location
+                self.locations.append(location)
+            }
+        }
+    }
+
+    
 }
