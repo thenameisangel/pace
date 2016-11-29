@@ -64,10 +64,10 @@ class HomeViewController: UIViewController {
 //        let auth = SPTAuth.defaultInstance()
         
         //create URL to open Safari window
-        let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
+        Variables.accessToken = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
+
         
-        
-        UIApplication.sharedApplication().openURL(loginURL)
+        UIApplication.sharedApplication().openURL(Variables.accessToken!)
     }
 
     override func didReceiveMemoryWarning() {

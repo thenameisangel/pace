@@ -96,7 +96,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         timeElapsedLbl.text = secondsQuantity.description
         let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(), doubleValue: distance)
         distanceRunLbl.text = distanceQuantity.description
-        targetPaceLbl.text = targetPace + " minutes per mile"
+//        targetPaceLbl.text = targetPace + " minutes per mile"
     }
     
     //MARK: Spotify Player
@@ -132,7 +132,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         }
         player?.delegate = self
         player?.playbackDelegate = self
-//        player?.loginWithAccessToken(homeVC.session.accessToken)
+        player?.loginWithAccessToken("https://accounts.spotify.com/authorize?nolinks=true&nosignup=true&response_type=token&scope=streaming&utm_source=spotify-sdk&utm_medium=ios-sdk&utm_campaign=ios-sdk&redirect_uri=pace%3A%2F%2FreturnAfterLogin&show_dialog=true&client_id=7884d212f6ef45b5b4691688644f1217")
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
