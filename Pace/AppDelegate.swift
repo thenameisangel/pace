@@ -30,26 +30,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        let auth = SPTAuth.defaultInstance()
         
-        print("In AppDelegate application function")
-        
-        if SPTAuth.defaultInstance().canHandleURL(url) {
+        if auth.canHandleURL(url) {
             
-            print("Valid authentication URL")
-            
-            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error: NSError!, session:SPTSession!) -> Void in
-                if error != nil {
-                    print("Authentication Error")
+            auth.handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error: NSError!, session: SPTSession!) -> Void in
+                if (error != nil) {
+                    print("Authentication Error: \(error)")
                     return
+                } else {
+                    auth.session = session
                 }
-                //used for small key:value pairs
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setBool(true, forKey: "premiumPurchased")
                 
-                //create session object and set it as a user default
-                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-                userDefaults.setObject(sessionData, forKey: "SpotifySession")
-                userDefaults.synchronize()
+                
+//                //used for small key:value pairs
+//                let userDefaults = NSUserDefaults.standardUserDefaults()
+//                userDefaults.setBool(true, forKey: "premiumPurchased")
+//                
+//                //create session object and set it as a user default
+//                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+//                userDefaults.setObject(sessionData, forKey: "SpotifySession")
+//                userDefaults.synchronize()
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object:nil)
             })

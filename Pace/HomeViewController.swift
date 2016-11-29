@@ -18,8 +18,21 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let auth = SPTAuth.defaultInstance()
+        
+        if auth.session == nil {
+            print("No token/session exists")
+            return
+        }
+        
+        if auth.session.isValid() {
+            print("Valid session exists")
+            return
+        }
+
+        
 //        loginButton.hidden = true
-//     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
+     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
 //
 //        
 //        let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -71,10 +84,6 @@ class HomeViewController: UIViewController {
         
         let loginURL = auth.spotifyWebAuthenticationURL()
         print("Login URL: \(loginURL)")
-        
-//        //create URL to open Safari window
-//        let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
-
         
         UIApplication.sharedApplication().openURL(loginURL)
     }

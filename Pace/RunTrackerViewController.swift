@@ -119,7 +119,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     func loginToPlayer() {
         
-//       let auth: SPTAuth = SPTAuth.defaultInstance()
+       let auth: SPTAuth = SPTAuth.defaultInstance()
         
         if player == nil {
             player = SPTAudioStreamingController.sharedInstance()
@@ -132,13 +132,12 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         }
         player?.delegate = self
         player?.playbackDelegate = self
-        
-        //INCORRECT ACCESS TOKEN
-        player?.loginWithAccessToken("https://accounts.spotify.com/authorize?nolinks=true&nosignup=true&response_type=token&scope=streaming&utm_source=spotify-sdk&utm_medium=ios-sdk&utm_campaign=ios-sdk&redirect_uri=pace%3A%2F%2FreturnAfterLogin&show_dialog=true&client_id=7884d212f6ef45b5b4691688644f1217")
+        player?.loginWithAccessToken(auth.session.accessToken)
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
         startNextSong()
+        print("Successful login!")
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveError error: NSError!) {
