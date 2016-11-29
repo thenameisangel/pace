@@ -22,12 +22,17 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     var player: SPTAudioStreamingController?
     let homeVC:HomeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
     
+    
+    // MARK: Properties
     @IBOutlet weak var songTitleLbl: UITextView!
     @IBOutlet weak var artistLbl: UITextView!
     @IBOutlet weak var distanceRunLbl: UITextView!
     @IBOutlet weak var timeElapsedLbl: UITextView!
     @IBOutlet weak var targetPaceLbl: UITextView!
     @IBOutlet weak var endRunBtn: UIButton!
+    
+    // MARK: Actions
+    // Saving the Run
     @IBAction func endRun(sender: AnyObject) {
         let savedRun = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext)
         savedRun.setValue(NSDate(), forKey: "date")
@@ -40,11 +45,16 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
             fatalError("Failure to save context: \(error)")
         }
     }
-    var targetPace: String!
     
+    // MARK: Variables
+    var targetPace: String!
     var seconds = 0.0
     var distance = 0.0
     
+    lazy var locations = [CLLocation]()
+    lazy var timer = NSTimer()
+    
+    // MARK: Location Manager Properties
     lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
@@ -56,16 +66,16 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         return _locationManager
     }()
     
-    lazy var locations = [CLLocation]()
-    lazy var timer = NSTimer()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loginToPlayer()
+    func startLocationUpdates() {
+        // Here, the location manager will be lazily instantiated
+        locationManager.startUpdatingLocation()
     }
-    
+
+    // MARK: Entering the View
     override func viewWillAppear(animated: Bool) {
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization() // authorize core location
+        
+        // initialize fields and timer
         seconds = 0.0
         distance = 0.0
         locations.removeAll(keepCapacity: false)
@@ -73,15 +83,13 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         startLocationUpdates()
     }
     
+    // MARK: Exiting the View
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         timer.invalidate()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    // MARK: Timer Method
     func eachSecond(timer: NSTimer) {
         seconds += 1
         let secondsQuantity = HKQuantity(unit: HKUnit.secondUnit(), doubleValue: seconds)
@@ -91,9 +99,14 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         targetPaceLbl.text = targetPace + " minutes per mile"
     }
     
-    func startLocationUpdates() {
-        // Here, the location manager will be lazily instantiated
-        locationManager.startUpdatingLocation()
+    //MARK: Spotify Player
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginToPlayer()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func startNextSong() {
@@ -143,7 +156,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     }
 }
 
-// MARK: - CLLocationManagerDelegate
+// MARK: - CLLocationManagerDelegate (Recording the Run)
 extension RunTrackerViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
