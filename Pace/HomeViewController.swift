@@ -18,39 +18,39 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.hidden = true
-     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
-
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        //session already exists
-        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
-            let sessionDataObj = sessionObj as! NSData
-            
-            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
-            
-            if !session.isValid() {
-                SPTAuth.defaultInstance().renewSession(session, callback: { (error:NSError!, session:SPTSession!) -> Void in
-                    if error == nil {
-                        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-                        userDefaults.setObject(sessionData, forKey: "SpotifySession")
-                        userDefaults.synchronize()
-
-                        self.session = session
-                        //playUsingSession()
-                    } else {
-                        print("Error refreshing session")
-                    }
-                })
-            } else {
-                print("session valid")
-                //playingUsingSession()
-            }
-        } else {
-            //session doesn't exist
-            loginButton.hidden = false
-        }
+//        loginButton.hidden = true
+//     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
+//
+//        
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
+//        
+//        //session already exists
+//        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
+//            let sessionDataObj = sessionObj as! NSData
+//            
+//            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+//            
+//            if !session.isValid() {
+//                SPTAuth.defaultInstance().renewSession(session, callback: { (error:NSError!, session:SPTSession!) -> Void in
+//                    if error == nil {
+//                        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+//                        userDefaults.setObject(sessionData, forKey: "SpotifySession")
+//                        userDefaults.synchronize()
+//
+//                        self.session = session
+//                        //playUsingSession()
+//                    } else {
+//                        print("Error refreshing session")
+//                    }
+//                })
+//            } else {
+//                print("session valid")
+//                //playingUsingSession()
+//            }
+//        } else {
+//            //session doesn't exist
+//            loginButton.hidden = false
+//        }
         
     }
     
@@ -61,13 +61,22 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func loginWithSpotify(sender: AnyObject) {
-//        let auth = SPTAuth.defaultInstance()
+        let auth = SPTAuth.defaultInstance()
         
-        //create URL to open Safari window
-        Variables.accessToken = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
+        auth.clientID = clientID
+        auth.redirectURL = NSURL(string:callURL)
+        auth.tokenRefreshURL = NSURL(string: tokenRefreshServiceURL)
+        auth.tokenSwapURL = NSURL(string:tokenSwapURL)
+        auth.requestedScopes = [SPTAuthStreamingScope]
+        
+        let loginURL = auth.spotifyWebAuthenticationURL()
+        print("Login URL: \(loginURL)")
+        
+//        //create URL to open Safari window
+//        let loginURL = SPTAuth.loginURLForClientId(clientID, withRedirectURL: NSURL(string: callURL), scopes: [SPTAuthStreamingScope], responseType: "token")
 
         
-        UIApplication.sharedApplication().openURL(Variables.accessToken!)
+        UIApplication.sharedApplication().openURL(loginURL)
     }
 
     override func didReceiveMemoryWarning() {

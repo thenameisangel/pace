@@ -31,7 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
+        print("In AppDelegate application function")
+        
         if SPTAuth.defaultInstance().canHandleURL(url) {
+            
+            print("Valid authentication URL")
+            
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error: NSError!, session:SPTSession!) -> Void in
                 if error != nil {
                     print("Authentication Error")

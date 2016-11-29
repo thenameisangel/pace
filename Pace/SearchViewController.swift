@@ -38,11 +38,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("SongResultCell", forIndexPath: indexPath) as! SongResultCell
-        
-        print(songs[indexPath.row][0])
-        print(songs[indexPath.row][1])
-        print(songs[indexPath.row][2])
-        
         cell.artistNameLbl.text = songs[indexPath.row][0]
         cell.albumTitleLbl.text = songs[indexPath.row][1]
         cell.songTitleLbl.text = songs[indexPath.row][2]
