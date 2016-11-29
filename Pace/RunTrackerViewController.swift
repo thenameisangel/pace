@@ -31,6 +31,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     @IBOutlet weak var targetPaceLbl: UITextView!
     @IBOutlet weak var endRunBtn: UIButton!
     
+    
     // MARK: Actions
     // Saving the Run
     @IBAction func endRun(sender: AnyObject) {
@@ -96,6 +97,10 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         timeElapsedLbl.text = secondsQuantity.description
         let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(), doubleValue: distance)
         distanceRunLbl.text = distanceQuantity.description
+        
+        // MARK: Set font
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(100)
+        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
 //        targetPaceLbl.text = targetPace + " minutes per mile"
     }
 
@@ -104,6 +109,12 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     override func viewDidLoad() {
         super.viewDidLoad()
         loginToPlayer()
+        // MARK: Set font
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(100)
+        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
+        targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
+        songTitleLbl.font = UIFont(name: "Avenir", size: 11)
+        artistLbl.font = UIFont(name: "Avenir", size: 11)
     }
     
     override func didReceiveMemoryWarning() {
