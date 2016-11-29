@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--New Run View Controller-->
+        <!--New Run-->
         <scene sceneID="TeZ-JM-pAm">
             <objects>
                 <viewController id="py8-Kg-TYZ" customClass="NewRunViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,11 +25,11 @@
                                     <navigationItem title="Start a New Run!" id="Ch7-3b-bXh"/>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-MB-SbE">
-                                <rect key="frame" x="195" y="72" width="210" height="428"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-MB-SbE">
+                                <rect key="frame" x="28" y="72" width="544" height="397"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Pace!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-pV-4x4">
-                                        <rect key="frame" x="21" y="0.0" width="169" height="30"/>
+                                        <rect key="frame" x="188" y="0.0" width="169" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="TCi-RQ-CJE"/>
                                         </constraints>
@@ -37,26 +37,31 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select genre:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-65-Juz">
-                                        <rect key="frame" x="54" y="40" width="102" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="102" id="6lE-p1-O7l"/>
-                                            <constraint firstAttribute="height" constant="21" id="and-JY-y0x"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Genre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-qW-ORu">
-                                        <rect key="frame" x="56" y="71" width="98" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="HD8-Iu-jUK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRU-g1-TZ6">
+                                        <rect key="frame" x="221" y="70" width="102" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select genre:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-65-Juz">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="102" id="6lE-p1-O7l"/>
+                                                    <constraint firstAttribute="height" constant="21" id="and-JY-y0x"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Genre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-qW-ORu">
+                                                <rect key="frame" x="0.0" y="25" width="102" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="HD8-Iu-jUK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-4t-6yh">
-                                        <rect key="frame" x="91" y="111" width="28" height="12"/>
+                                        <rect key="frame" x="258" y="165" width="28" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="U54-99-T2J"/>
                                         </constraints>
@@ -64,15 +69,115 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5T-uq-5qo" customClass="LineSeparatorView" customModule="Pace" customModuleProvider="target">
-                                        <rect key="frame" x="91" y="133" width="28" height="255"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-Gu-h4V">
+                                        <rect key="frame" x="0.0" y="217" width="544" height="110"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gUx-Tc-5ah">
+                                                <rect key="frame" x="0.0" y="0.0" width="258" height="110"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-ij-E4Y">
+                                                        <rect key="frame" x="54" y="0.0" width="150" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="Sf0-hs-Jsw"/>
+                                                            <constraint firstAttribute="height" constant="30" id="ZhP-z3-stt"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Enter height in inches:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="10" name="Helvetica"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Mu-oaU">
+                                                        <rect key="frame" x="79" y="40" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="hLf-Wf-wFC"/>
+                                                            <constraint firstAttribute="width" constant="100" id="xkN-31-4aY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67q-9r-abs">
+                                                        <rect key="frame" x="24" y="80" width="210" height="30"/>
+                                                        <color key="backgroundColor" red="0.80784313725490198" green="0.95686274509803915" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="H1Q-Nb-FsL"/>
+                                                            <constraint firstAttribute="width" constant="210" id="JsN-vg-pOk"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Search Song!">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="songSearch:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="svU-lm-jIn"/>
+                                                            <segue destination="BYZ-38-t0r" kind="show" identifier="" id="FBV-V3-ld0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbS-a9-lpA" customClass="LineSeparatorView" customModule="Pace" customModuleProvider="target">
+                                                <rect key="frame" x="258" y="0.0" width="28" height="110"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="2Yz-Tn-1cJ"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ch-RPA">
+                                                <rect key="frame" x="286" y="0.0" width="258" height="110"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
+                                                        <rect key="frame" x="54" y="0.0" width="150" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="1er-BL-dHP"/>
+                                                            <constraint firstAttribute="height" constant="30" id="7uD-ES-yXD"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Enter target pace (minutes per mile):">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="10" name="Helvetica"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pace" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
+                                                        <rect key="frame" x="79" y="40" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="3qu-h2-T3Z"/>
+                                                            <constraint firstAttribute="width" constant="100" id="uBM-0v-Twt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
+                                                        <rect key="frame" x="24" y="80" width="210" height="30"/>
+                                                        <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="210" id="uEu-hd-rJz"/>
+                                                            <constraint firstAttribute="height" constant="30" id="zx9-FW-7Lg"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Generate Playlist!">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
+                                                            <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="JMI-0t-t3i"/>
+                                            <constraint firstItem="mbS-a9-lpA" firstAttribute="centerX" secondItem="dRr-Gu-h4V" secondAttribute="centerX" id="waK-uG-GRC"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
-                                        <rect key="frame" x="0.0" y="398" width="210" height="30"/>
+                                        <rect key="frame" x="167" y="367" width="210" height="30"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="Sfg-fC-lmh"/>
@@ -87,116 +192,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-Gu-h4V">
-                                <rect key="frame" x="28" y="235" width="544" height="130"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gUx-Tc-5ah">
-                                        <rect key="frame" x="0.0" y="0.0" width="259" height="130"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-ij-E4Y">
-                                                <rect key="frame" x="45" y="0.0" width="170" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="170" id="2M3-UO-bs9"/>
-                                                    <constraint firstAttribute="height" constant="50" id="jNC-uf-1yg"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Enter height in inches:">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="10" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Mu-oaU">
-                                                <rect key="frame" x="65" y="60" width="130" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="bzZ-SE-Zxk"/>
-                                                    <constraint firstAttribute="height" constant="30" id="flk-Wz-V2m"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67q-9r-abs">
-                                                <rect key="frame" x="25" y="100" width="210" height="30"/>
-                                                <color key="backgroundColor" red="0.80784313725490198" green="0.95686274509803915" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="May-3i-Zuf"/>
-                                                    <constraint firstAttribute="height" constant="30" id="P6E-Mf-bJF"/>
-                                                </constraints>
-                                                <state key="normal" title="Search Song!">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="songSearch:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="svU-lm-jIn"/>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="FBV-V3-ld0"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ch-RPA">
-                                        <rect key="frame" x="285" y="0.0" width="259" height="130"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
-                                                <rect key="frame" x="45" y="0.0" width="170" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="170" id="9kL-nN-Vch"/>
-                                                    <constraint firstAttribute="height" constant="50" id="dtB-hw-w7G"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Enter target pace (minutes per mile):">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="10" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pace" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
-                                                <rect key="frame" x="65" y="60" width="130" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="wqH-1P-1m5"/>
-                                                    <constraint firstAttribute="height" constant="30" id="zJ4-zw-yWz"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
-                                                <rect key="frame" x="25" y="100" width="210" height="30"/>
-                                                <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="4OD-5o-mrR"/>
-                                                    <constraint firstAttribute="height" constant="30" id="e2S-Pl-vyd"/>
-                                                </constraints>
-                                                <state key="normal" title="Generate Playlist!">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
-                                                    <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zRU-g1-TZ6" firstAttribute="centerX" secondItem="c5Z-MB-SbE" secondAttribute="centerX" id="Jvz-hF-y2E"/>
+                                    <constraint firstItem="dRr-Gu-h4V" firstAttribute="leading" secondItem="c5Z-MB-SbE" secondAttribute="leading" id="iPB-x1-o1F"/>
+                                    <constraint firstAttribute="trailing" secondItem="dRr-Gu-h4V" secondAttribute="trailing" id="qOQ-EB-1I7"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dRr-Gu-h4V" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="8" id="Aam-la-xEF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dRr-Gu-h4V" secondAttribute="trailing" constant="8" id="N0k-Vw-3G4"/>
-                            <constraint firstItem="dRr-Gu-h4V" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="hNI-Oo-dPP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c5Z-MB-SbE" secondAttribute="trailing" constant="8" id="PwZ-UI-hjO"/>
+                            <constraint firstItem="c5Z-MB-SbE" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="8" id="brb-Gv-8V5"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="8" id="j0f-hi-sva"/>
-                            <constraint firstItem="qby-Fc-gCy" firstAttribute="top" secondItem="c5Z-MB-SbE" secondAttribute="bottom" constant="100" id="qH8-vF-M3H"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="sQL-83-XU7"/>
-                            <constraint firstItem="dRr-Gu-h4V" firstAttribute="centerY" secondItem="pa6-79-Jbz" secondAttribute="centerY" id="vJ5-TP-24a"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Run" id="7u3-Kh-Twi"/>
                     <connections>
                         <outlet property="enterHeightTxt" destination="2jR-Mu-oaU" id="nUC-NU-V39"/>
                         <outlet property="enterTargetPaceTxt" destination="NaW-j7-3Aw" id="jPK-n2-34k"/>

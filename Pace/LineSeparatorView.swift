@@ -14,7 +14,7 @@ class LineSeparatorView: UIView {
     override func drawRect(rect: CGRect) {
         //set up the width and height variables
         //for the horizontal stroke
-        let lineWidth: CGFloat = 3.0
+        let lineWidth: CGFloat = 1.0
         let lineHeight: CGFloat = max(bounds.width, bounds.height)
         
         //create the path
