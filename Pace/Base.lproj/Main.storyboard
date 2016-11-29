@@ -318,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="2447" y="-339"/>
         </scene>
-        <!--Run Tracker View Controller-->
+        <!--Run Tracker-->
         <scene sceneID="Qga-lo-7jz">
             <objects>
                 <viewController storyboardIdentifier="RunTrackerViewController" id="o9d-Hx-MQg" customClass="RunTrackerViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
@@ -330,12 +330,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOL-Z2-duG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Run Tracker" id="IWx-kd-k3w"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sh-du-f8o">
                                 <rect key="frame" x="220" y="408" width="161" height="30"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -424,6 +418,7 @@
                             <constraint firstItem="YI4-fL-Bdi" firstAttribute="height" secondItem="3Zs-Vo-E1O" secondAttribute="height" id="zuK-5A-gOi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Run Tracker" id="TsS-tE-RmW"/>
                     <connections>
                         <outlet property="artistLbl" destination="5kZ-48-sS3" id="bUj-rD-OfS"/>
                         <outlet property="distanceRunLbl" destination="3Zs-Vo-E1O" id="cw8-6O-Mp4"/>
@@ -802,7 +797,7 @@
         <image name="loginButton" width="2362" height="708"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GeF-hY-tnm"/>
-        <segue reference="k3O-e2-dvW"/>
+        <segue reference="Qwd-UR-73m"/>
+        <segue reference="nd9-3C-kxk"/>
     </inferredMetricsTieBreakers>
 </document>
