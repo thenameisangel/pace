@@ -87,8 +87,8 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         timer.invalidate()
+
     }
-    
     // MARK: Timer Method
     func eachSecond(timer: NSTimer) {
         seconds += 1
@@ -98,6 +98,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         distanceRunLbl.text = distanceQuantity.description
 //        targetPaceLbl.text = targetPace + " minutes per mile"
     }
+
     
     //MARK: Spotify Player
     override func viewDidLoad() {

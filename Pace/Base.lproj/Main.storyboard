@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -330,10 +331,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sh-du-f8o">
-                                <rect key="frame" x="220" y="408" width="161" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="17:38" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-sp-5GC">
+                                <rect key="frame" x="199" y="306" width="71" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="53s-5w-cSD"/>
+                                    <constraint firstAttribute="height" constant="36" id="W2T-df-LlZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME ELAPSED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiA-Br-qmw">
+                                <rect key="frame" x="190" y="273" width="91" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="zzc-Rh-bNr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-Sc-2bX">
+                                <rect key="frame" x="271" y="78" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3GR-cy-4bN"/>
+                                    <constraint firstAttribute="width" constant="59" id="v3N-kD-UI9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="2.58" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zs-Vo-E1O">
+                                <rect key="frame" x="189" y="107" width="221" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="7gP-v0-4VA"/>
+                                    <constraint firstAttribute="height" constant="125" id="Er8-ON-uDp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="100"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET PACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtU-7g-RZd">
+                                <rect key="frame" x="332" y="274" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="82g-8w-nU9"/>
+                                    <constraint firstAttribute="height" constant="21" id="9ng-h0-a5w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="8:30" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-fL-Bdi">
+                                <rect key="frame" x="328" y="304" width="82" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min/mi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXP-QT-xeG">
+                                <rect key="frame" x="339" y="350" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Bi2-nZ-T4M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-cX-TJg">
+                                <rect key="frame" x="205" y="350" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="oqu-j9-U0h"/>
+                                    <constraint firstAttribute="height" constant="21" id="ySF-Pp-X4W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sh-du-f8o">
+                                <rect key="frame" x="219" y="408" width="161" height="63"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.95686274510000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="End Run">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Lku-zU-Iw5"/>
+                                    <constraint firstAttribute="width" constant="161" id="qIA-Sc-ffs"/>
+                                </constraints>
+                                <state key="normal" title="END RUN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -341,81 +420,57 @@
                                     <segue destination="epv-aE-x1i" kind="show" identifier="endRunSegue" id="nd9-3C-kxk"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Time elapsed displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-sp-5GC">
-                                <rect key="frame" x="180" y="113" width="240" height="35"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Artist" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3" userLabel="ArtistLbl">
+                                <rect key="frame" x="131" y="510" width="117" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="auQ-vw-bkY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time elapsed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiA-Br-qmw">
-                                <rect key="frame" x="255" y="78" width="91" height="27"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distance run:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-Sc-2bX">
-                                <rect key="frame" x="271" y="156" width="59" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Distance run displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Zs-Vo-E1O">
-                                <rect key="frame" x="180" y="185" width="240" height="35"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Song Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-dG-F0t" userLabel="SongTitleLbl">
+                                <rect key="frame" x="267" y="510" width="202" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="Ets-7k-7cM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Target pace:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtU-7g-RZd">
-                                <rect key="frame" x="270" y="228" width="60" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Target pace displayed here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-fL-Bdi">
-                                <rect key="frame" x="180" y="257" width="240" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Now playing:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhF-Fa-HJg">
-                                <rect key="frame" x="271" y="300" width="58" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-zK-EWf" userLabel="SongLbl">
-                                <rect key="frame" x="180" y="329" width="239" height="50"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Artist" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3" userLabel="ArtistLbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Song Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-dG-F0t" userLabel="SongTitleLbl">
-                                        <rect key="frame" x="117" y="0.0" width="122" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yW5-sp-5GC" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="0zU-fF-BIY"/>
-                            <constraint firstItem="QtU-7g-RZd" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="1Yt-wg-jvd"/>
-                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="height" secondItem="yW5-sp-5GC" secondAttribute="height" id="FOA-Be-mpR"/>
-                            <constraint firstItem="TiA-Br-qmw" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="FXH-C5-w1s"/>
-                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="width" secondItem="3Zs-Vo-E1O" secondAttribute="width" id="HWr-UN-I6o"/>
-                            <constraint firstItem="1Ck-Sc-2bX" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="HqH-qX-U6h"/>
-                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="Q5G-0u-X3Y"/>
-                            <constraint firstItem="JhF-Fa-HJg" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="RcY-AU-tGB"/>
-                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="width" secondItem="yW5-sp-5GC" secondAttribute="width" id="Umk-FV-dGk"/>
-                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="cqb-xa-Qwr"/>
-                            <constraint firstItem="6B9-zK-EWf" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="j3Q-se-G1w"/>
-                            <constraint firstItem="5sh-du-f8o" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="mFg-ph-SaY"/>
-                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="height" secondItem="3Zs-Vo-E1O" secondAttribute="height" id="zuK-5A-gOi"/>
+                            <constraint firstItem="QtU-7g-RZd" firstAttribute="centerX" secondItem="YI4-fL-Bdi" secondAttribute="centerX" id="0MA-Ts-5sN"/>
+                            <constraint firstItem="1Ck-Sc-2bX" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="70d-dC-17v"/>
+                            <constraint firstItem="RbX-cX-TJg" firstAttribute="firstBaseline" secondItem="yXP-QT-xeG" secondAttribute="firstBaseline" id="7ak-Kt-Gfm"/>
+                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="top" secondItem="QtU-7g-RZd" secondAttribute="bottom" constant="9" id="7ir-QN-6aC"/>
+                            <constraint firstItem="TiA-Br-qmw" firstAttribute="centerX" secondItem="RbX-cX-TJg" secondAttribute="centerX" id="C2e-Wo-sFF"/>
+                            <constraint firstItem="yXP-QT-xeG" firstAttribute="top" secondItem="YI4-fL-Bdi" secondAttribute="bottom" constant="10" id="DDI-Ey-Vgk"/>
+                            <constraint firstItem="RbX-cX-TJg" firstAttribute="top" secondItem="yW5-sp-5GC" secondAttribute="bottom" constant="8" symbolic="YES" id="JwO-or-HUE"/>
+                            <constraint firstItem="A3X-0E-W4O" firstAttribute="top" secondItem="5kZ-48-sS3" secondAttribute="bottom" constant="19" id="MOt-MV-wDx"/>
+                            <constraint firstItem="RbX-cX-TJg" firstAttribute="baseline" secondItem="yXP-QT-xeG" secondAttribute="baseline" id="NZJ-oD-vaJ"/>
+                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="leading" secondItem="yW5-sp-5GC" secondAttribute="trailing" constant="58" id="Of9-2k-eUP"/>
+                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="trailing" secondItem="YI4-fL-Bdi" secondAttribute="trailing" id="Sde-N4-F2P"/>
+                            <constraint firstItem="1Ck-Sc-2bX" firstAttribute="top" secondItem="OVh-GH-mgW" secondAttribute="bottom" constant="14" id="UHd-0n-fvS"/>
+                            <constraint firstItem="5kZ-48-sS3" firstAttribute="bottom" secondItem="Wev-dG-F0t" secondAttribute="bottom" id="VHx-tD-PjN"/>
+                            <constraint firstItem="QtU-7g-RZd" firstAttribute="top" secondItem="3Zs-Vo-E1O" secondAttribute="bottom" constant="42" id="WW7-Ve-OiD"/>
+                            <constraint firstItem="Wev-dG-F0t" firstAttribute="leading" secondItem="5kZ-48-sS3" secondAttribute="trailing" constant="19" id="a76-Nq-X3C"/>
+                            <constraint firstItem="yXP-QT-xeG" firstAttribute="leading" secondItem="RbX-cX-TJg" secondAttribute="trailing" constant="74" id="dCd-rp-9OS"/>
+                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="centerX" secondItem="5sh-du-f8o" secondAttribute="centerX" id="euI-Ta-LEc"/>
+                            <constraint firstItem="yW5-sp-5GC" firstAttribute="top" secondItem="TiA-Br-qmw" secondAttribute="bottom" constant="6" id="iwR-Et-bVM"/>
+                            <constraint firstItem="5kZ-48-sS3" firstAttribute="top" secondItem="Wev-dG-F0t" secondAttribute="top" id="jFI-H5-pVH"/>
+                            <constraint firstItem="QtU-7g-RZd" firstAttribute="leading" secondItem="TiA-Br-qmw" secondAttribute="trailing" constant="51" id="kuM-Bp-NSS"/>
+                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="centerX" secondItem="qBp-4f-QnM" secondAttribute="centerX" id="lRm-Lc-DOb"/>
+                            <constraint firstItem="yW5-sp-5GC" firstAttribute="centerX" secondItem="RbX-cX-TJg" secondAttribute="centerX" id="nYK-j5-e9y"/>
+                            <constraint firstItem="5kZ-48-sS3" firstAttribute="top" secondItem="5sh-du-f8o" secondAttribute="bottom" constant="39" id="qm9-SQ-8Ix"/>
+                            <constraint firstItem="TiA-Br-qmw" firstAttribute="top" secondItem="3Zs-Vo-E1O" secondAttribute="bottom" constant="41" id="rqm-cN-40d"/>
+                            <constraint firstItem="A3X-0E-W4O" firstAttribute="top" secondItem="5kZ-48-sS3" secondAttribute="bottom" constant="19" id="sS2-nf-fI8"/>
+                            <constraint firstItem="5kZ-48-sS3" firstAttribute="leading" secondItem="qBp-4f-QnM" secondAttribute="leading" constant="131" id="tjR-hp-JOl"/>
+                            <constraint firstItem="3Zs-Vo-E1O" firstAttribute="top" secondItem="1Ck-Sc-2bX" secondAttribute="bottom" constant="8" symbolic="YES" id="vRZ-9k-ptN"/>
+                            <constraint firstItem="YI4-fL-Bdi" firstAttribute="centerX" secondItem="yXP-QT-xeG" secondAttribute="centerX" id="vtc-oP-rzI"/>
+                            <constraint firstItem="5sh-du-f8o" firstAttribute="top" secondItem="RbX-cX-TJg" secondAttribute="bottom" constant="37" id="wSa-mz-zjM"/>
+                            <constraint firstItem="A3X-0E-W4O" firstAttribute="top" secondItem="Wev-dG-F0t" secondAttribute="bottom" constant="19" id="zBY-JF-G6s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Run Tracker" id="TsS-tE-RmW"/>
