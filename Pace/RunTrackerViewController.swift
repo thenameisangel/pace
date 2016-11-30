@@ -124,7 +124,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     }
     
     func startNextSong() {
-        player!.playSpotifyURI("spotify:track:4TkGhMYlkcbxCMj3pny9mU", startingWithIndex: 0, startingWithPosition: 0, callback: {(error: NSError?) in
+        player!.playSpotifyURI("spotify:track:4mU5iXHeLgbR94siF7p1sY", startingWithIndex: 0, startingWithPosition: 0, callback: {(error: NSError?) in
             if error != nil {
                 print("Unable to play song")
             }
