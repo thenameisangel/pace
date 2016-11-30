@@ -99,7 +99,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         distanceRunLbl.text = distanceQuantity.description
         
         // MARK: Set font
-        distanceRunLbl.font = UIFont.boldSystemFontOfSize(150)
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(120)
         timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
         timeElapsedLbl.textAlignment = .Center
         distanceRunLbl.textAlignment = .Center
@@ -112,7 +112,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.viewDidLoad()
         loginToPlayer()
         // MARK: Set font
-        distanceRunLbl.font = UIFont.boldSystemFontOfSize(150)
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(120)
         timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
         targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
         songTitleLbl.font = UIFont(name: "Avenir", size: 11)

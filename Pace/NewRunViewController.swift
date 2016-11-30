@@ -21,7 +21,29 @@ class NewRunViewController: UIViewController {
     }
     @IBAction func viewPastRuns(sender: AnyObject) {
     }
+    
     var targetPace:String!
+    
+    override func viewDidLoad() {
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: enterHeightTxt.frame.size.height - width, width:  enterHeightTxt.frame.size.width, height: enterHeightTxt.frame.size.height)
+        
+        border.borderWidth = width
+        enterHeightTxt.layer.addSublayer(border)
+        enterHeightTxt.layer.masksToBounds = true
+        enterTargetPaceTxt.layer.addSublayer(border)
+        enterTargetPaceTxt.layer.masksToBounds = true
+        selectGenreTxt.layer.addSublayer(border)
+        selectGenreTxt.layer.masksToBounds = true
+    }
+    
+    
     @IBAction func viewNewPlaylist(sender: AnyObject) {
         targetPace = (enterTargetPaceTxt.text)!.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet())

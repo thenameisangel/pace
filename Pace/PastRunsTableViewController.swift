@@ -10,20 +10,29 @@ import UIKit
 import CoreData
 
 class PastRunsTableViewController: UITableViewController {
+    //COMMENTING OUT FOR DEMO PURPOSES
+    //var runArray: [NSManagedObject] = []
+    let runArray: [[String]] = [["01/12/15", "2.78 mi", "8:34\"/mi", "28:34\""],
+    ["01/18/15", "2.78 mi", "8:34\"/mi", "30:34\""],
+    ["01/19/15", "1.18 mi", "8:55\"/mi", "12:34\""],
+    ["02/21/15", "2.36 mi", "8:01\"/mi", "20:34\""],
+    ["02/30/15", "5.34 mi", "7:54\"/mi", "45:34\""],
+    ["04/12/15", "6.17 mi", "7:34\"/mi", "52:34\""]]
     
-    var runArray: [NSManagedObject] = []
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        let moc = managedObjectContext
-        let runsFetch = NSFetchRequest(entityName: "Run")
-        
-        do {
-            runArray = try moc.executeFetchRequest(runsFetch) as! [NSManagedObject]
-        } catch {
-            fatalError("Failed to fetch runs: \(error)")
-        }
+        //UNCOMMENT AFTER DEMO
+//        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+//        let moc = managedObjectContext
+//        let runsFetch = NSFetchRequest(entityName: "Run")
+//        
+//        do {
+//            runArray = try moc.executeFetchRequest(runsFetch) as! [NSManagedObject]
+//        } catch {
+//            fatalError("Failed to fetch runs: \(error)")
+//        }
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -54,12 +63,19 @@ class PastRunsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pastRunCell", forIndexPath: indexPath) as! PastRunTableViewCell
         
-        let run = runArray[indexPath.row]
         
-        cell.runDateLbl.text = run.valueForKey("date") as? String
-        cell.distanceLbl.text = run.valueForKey("distance") as? String
-        cell.paceLbl.text = run.valueForKey("pace") as? String
-        cell.timeLbl.text = run.valueForKey("time") as? String
+        cell.runDateLbl.text = runArray[indexPath.row][0]
+        cell.distanceLbl.text = runArray[indexPath.row][1]
+        //cell.paceLbl.text = runArray[indexPath.row][2]
+        cell.timeLbl.text = runArray[indexPath.row][3]
+        
+//        let run = runArray[indexPath.row]
+        
+//        
+//        cell.runDateLbl.text = run.valueForKey("date") as? String
+//        cell.distanceLbl.text = run.valueForKey("distance") as? String
+//        cell.paceLbl.text = run.valueForKey("pace") as? String
+//        cell.timeLbl.text = run.valueForKey("time") as? String
 
         
         return cell
