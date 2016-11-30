@@ -9,8 +9,8 @@
 - [ ] PlaylistViewController
 - [ ] RunSummaryViewController
 - [ ] RunTrackerViewController
-	- [ ] Fix font sizes of timer and mileage count when app runs
-	- [ ] Constraints
+	- [x] Fix font sizes of timer and mileage count when app runs
+	- [x] Constraints
 	- [ ] Convert seconds to mm:hh:ss
 - [ ] SPTAudioStreamingController
 - [ ] SearchViewController
