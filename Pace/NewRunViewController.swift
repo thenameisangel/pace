@@ -25,22 +25,11 @@ class NewRunViewController: UIViewController {
     var targetPace:String!
     
     override func viewDidLoad() {
-
+        viewPastRunsBtn.layer.borderWidth = 0.0
     }
     
     override func viewDidLayoutSubviews() {
-        let border = CALayer()
-        let width = CGFloat(0.5)
-        border.borderColor = UIColor.darkGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: enterHeightTxt.frame.size.height - width, width:  enterHeightTxt.frame.size.width, height: enterHeightTxt.frame.size.height)
-        
-        border.borderWidth = width
-        enterHeightTxt.layer.addSublayer(border)
-        enterHeightTxt.layer.masksToBounds = true
-        enterTargetPaceTxt.layer.addSublayer(border)
-        enterTargetPaceTxt.layer.masksToBounds = true
-        selectGenreTxt.layer.addSublayer(border)
-        selectGenreTxt.layer.masksToBounds = true
+
     }
     
     
