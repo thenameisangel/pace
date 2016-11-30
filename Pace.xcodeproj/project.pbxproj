@@ -11,6 +11,7 @@
 		0B50E6491DD4AE4B00543DD0 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E6461DD4AE4A00543DD0 /* SpotifyAuthentication.framework */; };
 		0B50E64A1DD4AE4B00543DD0 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E6471DD4AE4A00543DD0 /* SpotifyMetadata.framework */; };
 		0B50E64C1DD4AF2A00543DD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B50E64B1DD4AF2A00543DD0 /* AVFoundation.framework */; };
+		0B6E18F71DEE6459004FC750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E18F61DEE6459004FC750 /* Assets.xcassets */; };
 		0B8C347B1DDAB4FE00123EBE /* RunSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */; };
 		0B8C347D1DDAB50400123EBE /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */; };
 		0B8C347F1DDAB50A00123EBE /* RunTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */; };
@@ -22,7 +23,6 @@
 		0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */; };
 		0BE0400C1DD1ACA60056A6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE0400A1DD1ACA60056A6A3 /* Main.storyboard */; };
 		0BE0400F1DD1ACA60056A6A3 /* Pace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BE0400D1DD1ACA60056A6A3 /* Pace.xcdatamodeld */; };
-		0BE040111DD1ACA60056A6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE040101DD1ACA60056A6A3 /* Assets.xcassets */; };
 		0BE040141DD1ACA60056A6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE040121DD1ACA60056A6A3 /* LaunchScreen.storyboard */; };
 		0BE0401F1DD1ACA60056A6A3 /* PaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE0401E1DD1ACA60056A6A3 /* PaceTests.swift */; };
 		0BE0402A1DD1ACA60056A6A3 /* PaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040291DD1ACA60056A6A3 /* PaceUITests.swift */; };
@@ -56,6 +56,7 @@
 		0B50E6471DD4AE4A00543DD0 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
 		0B50E64B1DD4AF2A00543DD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0B50E64D1DD4B1AE00543DD0 /* Pace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pace-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B6E18F61DEE6459004FC750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSummaryViewController.swift; sourceTree = "<group>"; };
 		0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTrackerViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0BE0400B1DD1ACA60056A6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BE0400E1DD1ACA60056A6A3 /* Pace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pace.xcdatamodel; sourceTree = "<group>"; };
-		0BE040101DD1ACA60056A6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BE040131DD1ACA60056A6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BE040151DD1ACA60056A6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BE0401A1DD1ACA60056A6A3 /* PaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,6 @@
 				2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */,
 				0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */,
 				0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */,
-				0BE040101DD1ACA60056A6A3 /* Assets.xcassets */,
 				0BE040121DD1ACA60056A6A3 /* LaunchScreen.storyboard */,
 				0BE040151DD1ACA60056A6A3 /* Info.plist */,
 				0BE0400D1DD1ACA60056A6A3 /* Pace.xcdatamodeld */,
@@ -158,6 +157,7 @@
 				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
 				2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */,
 				0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */,
+				0B6E18F61DEE6459004FC750 /* Assets.xcassets */,
 				0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */,
 				0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */,
 				3C569D601DEC0A7D00CFFF13 /* LineSeparatorView.swift */,
@@ -293,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BE040141DD1ACA60056A6A3 /* LaunchScreen.storyboard in Resources */,
-				0BE040111DD1ACA60056A6A3 /* Assets.xcassets in Resources */,
+				0B6E18F71DEE6459004FC750 /* Assets.xcassets in Resources */,
 				0BE0400C1DD1ACA60056A6A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
