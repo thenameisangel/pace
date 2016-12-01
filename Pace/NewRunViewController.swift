@@ -33,6 +33,10 @@ class NewRunViewController: UIViewController {
     }
     
     
+    @IBAction func searchForSong(sender: AnyObject) {
+
+    }
+    
     @IBAction func viewNewPlaylist(sender: AnyObject) {
         targetPace = (enterTargetPaceTxt.text)!.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet())

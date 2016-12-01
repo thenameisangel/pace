@@ -18,6 +18,9 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     let callURL = "pace://returnAfterLogin"
     let tokenSwapURL = "http://localhost:1234/swap"
     let tokenRefreshServiceURL = "http://localhost:1234/refresh"
+    
+    let auth: SPTAuth = SPTAuth.defaultInstance()
+    
 
     var player: SPTAudioStreamingController?
     let homeVC:HomeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
@@ -80,7 +83,9 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         seconds = 0.0
         distance = 0.0
         locations.removeAll(keepCapacity: false)
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+       timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+        
+
         startLocationUpdates()
     }
     
@@ -123,18 +128,20 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.didReceiveMemoryWarning()
     }
     
+
+    
     func startNextSong() {
         player!.playSpotifyURI("spotify:track:4mU5iXHeLgbR94siF7p1sY", startingWithIndex: 0, startingWithPosition: 0, callback: {(error: NSError?) in
             if error != nil {
                 print("Unable to play song")
             }
         })
+        
+        
     }
     
     func loginToPlayer() {
-        
-       let auth: SPTAuth = SPTAuth.defaultInstance()
-        
+
         if player == nil {
             player = SPTAudioStreamingController.sharedInstance()
             
@@ -147,10 +154,32 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         player?.delegate = self
         player?.playbackDelegate = self
         player?.loginWithAccessToken(auth.session.accessToken)
+        
+    }
+    
+
+    func searchForSong(){
+
+        var searchResult = NSURL(string: "http://www.google.com")
+        
+        //testing how the SPTListPage works 
+        //var searchResultPage: SPTListPage
+        
+        do{
+            //this searches for the track (using QueryTypeTrack) and outputs and SPTList but I dont understand how to query the SPT list
+            //Also tried assigning searhResultPage to this, but I get an "Ambiguous Reference" error
+            try searchResult = SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
+        } catch {
+            print("Not a valid search term")
+        }
+   
+        UIApplication.sharedApplication().openURL(searchResult!)
+        
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
-        startNextSong()
+        searchForSong()
+        //startNextSong()
         print("Successful login!")
     }
     
