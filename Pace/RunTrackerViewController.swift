@@ -37,6 +37,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     override func viewDidLoad() {
         super.viewDidLoad()
         loginToPlayer()
+        loadSongData()
         
         // MARK: Set font
         distanceRunLbl.font = UIFont.boldSystemFontOfSize(120)
@@ -49,6 +50,27 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func loadSongData() {
+        let song = playlist[0]
+        
+        // Populate song label
+        songTitleLbl.text = song["title"] as? String
+        
+        // Populate artist label
+        if (song["artists"] != nil) {
+            let artists = song["artists"] as! NSArray
+            
+            // Handle multiple artists
+            if artists.count < 1 {
+                artistLbl.text = artists[0] as! String
+            } else {
+                let artist = artists[0] as! String
+                let features = artists.componentsJoinedByString(", ")
+                artistLbl.text = "\(artist) feat. \(features)"
+            }
+        }
     }
     
     // MARK: Actions
