@@ -16,18 +16,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     var playlist: [AnyObject] = []
     let auth: SPTAuth = SPTAuth.defaultInstance()
     
-    //create temp list of song objects
-    let songs: [[String]] = [["Usher", "Burn", "Confessions"],
-                             ["Drake", "Marvin's Room", "Take Care"],
-                             ["Chet Baker", "It's Always You", "Chet Baker Sings"],
-                             ["Billy Joel", "Vienna", "The Stranger"],
-                             ["Frank Sinatra", "The Way You Look Tonight", "Ultimate Sinatra"],
-                             ["Cashmere Cat", "Trust Nobody", "Trust Nobody"],
-                             ["Mumford and Sons", "Little Lion Man", "Sigh No More"],
-                             ["Miguel", "Adorn", "Kaleidoscope Dream"],
-                             ["Hailee Steinfield", "Rock Bottom", "HAIZ"],
-                             ["James Arthur", "Can I Be Him", "Back from the Edge"]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPlaylist()

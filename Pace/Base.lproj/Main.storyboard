@@ -422,8 +422,8 @@
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-Kr-fQs">
                                                         <rect key="frame" x="225" y="0.0" width="75" height="79"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TARGET PACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtU-7g-RZd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TARGET PACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtU-7g-RZd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="75" id="82g-8w-nU9"/>
                                                                     <constraint firstAttribute="height" constant="21" id="9ng-h0-a5w"/>
@@ -433,7 +433,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="8:30" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-fL-Bdi">
-                                                                <rect key="frame" x="0.0" y="21" width="75" height="40"/>
+                                                                <rect key="frame" x="0.0" y="26" width="75" height="34"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="3u2-py-ck5"/>
@@ -546,7 +546,7 @@
         <!--Playlist-->
         <scene sceneID="alZ-DP-fLb">
             <objects>
-                <viewController id="msX-i9-uvW" customClass="PlaylistViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="msX-i9-uvW" customClass="PlaylistViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddJ-tC-ctW"/>
                         <viewControllerLayoutGuide type="bottom" id="YyZ-9B-Z03"/>
@@ -555,41 +555,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyz-ja-zVu">
-                                <rect key="frame" x="0.0" y="64" width="600" height="482"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyz-ja-zVu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistSongCell" rowHeight="100" id="fBy-ts-DMf" customClass="PlaylistSongCell" customModule="Pace" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="600" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistSongCell" rowHeight="75" id="fBy-ts-DMf" customClass="PlaylistSongCell" customModule="Pace" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBy-ts-DMf" id="YFS-Kt-3UI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-OO-fLK">
-                                                    <rect key="frame" x="35" y="18" width="400" height="67"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-OO-fLK">
+                                                    <rect key="frame" x="23" y="19" width="400" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-hq-rTf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="37"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="400" id="RhN-Mh-6iQ"/>
-                                                                <constraint firstAttribute="height" constant="37" id="iOS-CD-pVa"/>
+                                                                <constraint firstAttribute="height" constant="24" id="iOS-CD-pVa"/>
                                                             </constraints>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Song Title">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="26" name="Avenir-Black"/>
+                                                                        <font key="NSFont" size="14" name="Avenir-Black"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-N8-ari">
-                                                            <rect key="frame" x="0.0" y="47" width="400" height="20"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-N8-ari">
+                                                            <rect key="frame" x="0.0" y="24" width="400" height="30"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRX-wc-eId">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRX-wc-eId">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="crc-FR-tF8"/>
                                                                     </constraints>
@@ -597,15 +597,15 @@
                                                                         <fragment content="Artist Name">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="Avenir-Light"/>
+                                                                                <font key="NSFont" size="10" name="Avenir-Heavy"/>
                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-cg-o2h">
-                                                                    <rect key="frame" x="210" y="0.0" width="190" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-cg-o2h">
+                                                                    <rect key="frame" x="0.0" y="16" width="400" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="Wjn-yd-Ggw"/>
                                                                     </constraints>
@@ -613,7 +613,7 @@
                                                                         <fragment content="Album Title">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="Avenir-Light"/>
+                                                                                <font key="NSFont" size="10" name="Avenir-Light"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
@@ -850,42 +850,42 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xmT-Wc-WkG"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SOd-qh-aGd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SOd-qh-aGd">
                                 <rect key="frame" x="0.0" y="109" width="600" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongResultCell" rowHeight="100" id="6uV-jX-5st" customClass="SongResultCell" customModule="Pace">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongResultCell" rowHeight="75" id="6uV-jX-5st" customClass="SongResultCell" customModule="Pace">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6uV-jX-5st" id="gyD-Zv-FzV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tMJ-TI-qfc">
-                                                    <rect key="frame" x="37" y="21" width="400" height="67"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tMJ-TI-qfc">
+                                                    <rect key="frame" x="23" y="19" width="400" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FR-PP-ZMe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="37"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="24"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="37" id="IGp-oJ-fea"/>
+                                                                <constraint firstAttribute="height" constant="24" id="IGp-oJ-fea"/>
                                                                 <constraint firstAttribute="width" constant="400" id="aE1-xJ-4SI"/>
                                                             </constraints>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Song Title">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="26" name="Avenir-Black"/>
+                                                                        <font key="NSFont" size="14" name="Avenir-Black"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-Qr-omy">
-                                                            <rect key="frame" x="0.0" y="47" width="400" height="20"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-Qr-omy">
+                                                            <rect key="frame" x="0.0" y="24" width="400" height="30"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-LG-BbM">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-LG-BbM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="zds-NY-Arx"/>
                                                                     </constraints>
@@ -893,14 +893,14 @@
                                                                         <fragment content="Artist Name">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="Avenir-Light"/>
+                                                                                <font key="NSFont" size="10" name="Avenir-Heavy"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5m-yD-wQr">
-                                                                    <rect key="frame" x="200" y="0.0" width="200" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5m-yD-wQr">
+                                                                    <rect key="frame" x="0.0" y="16" width="400" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="K0n-za-Gir"/>
                                                                     </constraints>
@@ -908,7 +908,7 @@
                                                                         <fragment content="Album Title">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="Avenir-Light"/>
+                                                                                <font key="NSFont" size="10" name="Avenir-Light"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
@@ -921,7 +921,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tMJ-TI-qfc" firstAttribute="centerY" secondItem="gyD-Zv-FzV" secondAttribute="centerY" id="O2M-7q-GAH"/>
-                                                <constraint firstItem="tMJ-TI-qfc" firstAttribute="leading" secondItem="gyD-Zv-FzV" secondAttribute="leadingMargin" constant="29" id="fAZ-Ai-vV5"/>
+                                                <constraint firstItem="tMJ-TI-qfc" firstAttribute="leading" secondItem="gyD-Zv-FzV" secondAttribute="leadingMargin" constant="15" id="fAZ-Ai-vV5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -991,7 +991,7 @@
         <image name="rewind" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tzi-a6-tLF"/>
+        <segue reference="Qwd-UR-73m"/>
         <segue reference="nd9-3C-kxk"/>
     </inferredMetricsTieBreakers>
 </document>
