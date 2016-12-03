@@ -31,7 +31,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPlaylist()
-        
     }
     
     func loadPlaylist() {
@@ -90,6 +89,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     for i in 0..<tracks.count {
                         
                         // store song details
+                        let album = tracks[i]["album"]!["name"] as! String
                         let uri = tracks[i]["uri"] as! String
                         let id = tracks[i]["id"] as! String
                         let songTitle = tracks[i]["name"] as! String
@@ -109,6 +109,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                             "id": id,
                             "artists": artists,
                             "title": songTitle,
+                            "album": album,
                             "uri": uri
                         ]
                         
@@ -143,10 +144,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("PlaylistSongCell", forIndexPath: indexPath) as! PlaylistSongCell
+        let song = songs[indexPath.row]
         
-        cell.songLabel.text = songs[indexPath.row][2]
-        cell.artistLabel.text = songs[indexPath.row][0]
-        cell.albumLabel.text = songs[indexPath.row][1]
+        cell.songLabel.text = song[1]
+        cell.artistLabel.text = song[0]
+        cell.albumLabel.text = song[2]
         
         return cell
     }
@@ -154,7 +156,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startRunSegue"{
             let nextScene = segue.destinationViewController as! RunTrackerViewController
-            //nextScene.targetPace = targetPace
+            // pass target pace to the run tracker
+            //nextScene.targetPaceLbl.text = targetPace
             
             // pass curated playlist to the run tracker
             nextScene.playlist = self.playlist

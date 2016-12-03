@@ -186,7 +186,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         print(error)
     }
     
-    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
