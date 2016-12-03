@@ -174,25 +174,21 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
 //        }
 //   
 //        UIApplication.sharedApplication().openURL(searchResult!)
-        
-        
 
                 
         // Send HTTP GET Request to retrieve recommended songs
         
-        // Set target genre and tempo
-//        let genre = "hip_hop"
-//        let tempo = 180.0
-//        let market = "US"
+        // Set target args
+        let genre = "hip-hop"
+        let tempo = 180.0
+        let market = "US"
+        let limit = 100
         
         // Define server side script URL
-//        let scriptUrl = "https://api.spotify.com/v1/recommendations"
+        let scriptUrl = "https://api.spotify.com/v1/recommendations"
         
-        
-        // ?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US
         // Add parms
-//        let urlWithParms = scriptUrl + "?seed_genre=\(genre)"
-        let urlWithParms = "https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US"
+        let urlWithParms = scriptUrl + "?limit=\(limit)&seed_genres=\(genre)&target_tempo=\(tempo)&market=\(market)"
         
         // Create NSURL Object
         let myUrl = NSURL(string: urlWithParms);
@@ -220,46 +216,57 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
             }
             
             // Print out response string
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
             
             
             // Convert server json response to NSDictionary
             do {
                 if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                    // create dict to hold all retrieved tracks
+                    var playlist: [String: AnyObject] = [:]
                     
+                    // cast tracks as an array of dictionaries
                     let tracks = convertedJsonIntoDict["tracks"] as! [[String:AnyObject]]
                     
-//                    for (key, value) in tracks {
-//                        
-//                    }
-                    
-                    // store URI
-                    let URI = tracks[0]["uri"]
-                    print("URI: \(URI!)")
-                    
-                    // store song title
-                    let songTitle = tracks[0]["name"]
-                    print("Song Title: \(songTitle!)")
-                    
-                    let artists = tracks[0]["artists"] as! NSArray
-                    
-                    // grab each artist name and add to array
-                    var allArtists: [String] = []
-                    
-                    for i in 0..<artists.count {
-                        let artist = artists[i] as! NSDictionary
-                        let artistName = artist["name"] as! String
-                        allArtists.append(artistName)
-                        print("Artist: \(artistName)")
+                    // access each track information
+                    for i in 0..<tracks.count {
+                        
+                        // store song details
+                        let uri = tracks[i]["uri"] as! String
+                        let id = tracks[i]["id"] as! String
+                        let songTitle = tracks[i]["name"] as! String
+                        let allArtists = tracks[i]["artists"] as! NSArray
+                        
+                        // add multiple artists on a track to an array
+                        var artists: [String] = []
+                        
+                        for j in 0..<allArtists.count {
+                            let artist = allArtists[j] as! NSDictionary
+                            let artistName = artist["name"] as! String
+                            artists.append(artistName)
+                        }
+                        
+                        // create song dict object
+                        let song: [String: AnyObject] = [
+                        "artists": artists,
+                        "title": songTitle,
+                        "URI": uri
+                        ]
+                        
+                        // add song to playlist
+                        playlist[id] = song
+                        
                     }
                     
- 
-
-                    
-                    
+                    // print all song data and count
+                    for (key, value) in playlist {
+                        print(key, value)
+                    }
+                    print("Number of songs: \(playlist.count)")
                 }
-
+            
+            // print error if request fails
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
@@ -267,6 +274,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         }
         
         task.resume()
+
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
