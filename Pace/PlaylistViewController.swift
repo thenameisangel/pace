@@ -14,6 +14,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     var targetPace: String!
     var playlist: [AnyObject] = []
+    var seedSong: [String:AnyObject] = [:]
     let auth: SPTAuth = SPTAuth.defaultInstance()
     
     override func viewDidLoad() {
@@ -28,6 +29,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         let genre = "country"
         let tempo = 120.0
         let market = "US"
+        
+        // target number of search results, MAX = 100
         let limit = 100
         
         // Define server side script URL

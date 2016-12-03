@@ -479,7 +479,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button" image="rewind"/>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="The Weeknd" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3" userLabel="ArtistLbl">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="The Weeknd" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-48-sS3" userLabel="ArtistLbl">
                                                 <rect key="frame" x="36" y="0.0" width="363" height="29"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -488,7 +488,7 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Six Feet Under" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-dG-F0t" userLabel="SongTitleLbl">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Six Feet Under" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-dG-F0t" userLabel="SongTitleLbl">
                                                 <rect key="frame" x="404" y="0.0" width="50" height="29"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -563,10 +563,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-OO-fLK">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-OO-fLK">
                                                     <rect key="frame" x="23" y="11" width="67" height="54"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-hq-rTf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-hq-rTf">
                                                             <rect key="frame" x="0.0" y="0.0" width="67" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="iOS-CD-pVa"/>
@@ -581,10 +581,10 @@
                                                             </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-N8-ari">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-N8-ari">
                                                             <rect key="frame" x="0.0" y="24" width="67" height="30"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRX-wc-eId">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRX-wc-eId">
                                                                     <rect key="frame" x="0.0" y="0.0" width="67" height="14"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Artist Name">
@@ -597,7 +597,7 @@
                                                                     </attributedString>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-cg-o2h">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-cg-o2h">
                                                                     <rect key="frame" x="0.0" y="16" width="67" height="14"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Album Title">
@@ -934,6 +934,7 @@
                     <navigationItem key="navigationItem" title="Search" id="rgc-Zq-6bw"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="f5r-gr-eDp" id="Fdw-1P-sEm"/>
+                        <outlet property="tableView" destination="SOd-qh-aGd" id="qjH-dd-r2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

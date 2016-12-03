@@ -177,28 +177,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         
     }
     
-
-    func searchForSong() {
-
-//        var searchResult = NSURL(string: "http://www.google.com")
-//        
-//        //testing how the SPTListPage works 
-//        //var searchResultPage: SPTListPage
-//        
-//        do{
-//            //this searches for the track (using QueryTypeTrack) and outputs and SPTList but I dont understand how to query the SPT list
-//            //Also tried assigning searhResultPage to this, but I get an "Ambiguous Reference" error
-//            try searchResult = SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
-//        } catch {
-//            print("Not a valid search term")
-//        }
-//   
-//        UIApplication.sharedApplication().openURL(searchResult!)
-
-    }
-    
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
-//        searchForSong()
         startNextSong()
         print("Successful login!")
     }
