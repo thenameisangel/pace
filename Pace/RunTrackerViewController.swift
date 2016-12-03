@@ -158,23 +158,115 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     }
     
 
-    func searchForSong(){
+    func searchForSong() {
 
-        var searchResult = NSURL(string: "http://www.google.com")
+//        var searchResult = NSURL(string: "http://www.google.com")
+//        
+//        //testing how the SPTListPage works 
+//        //var searchResultPage: SPTListPage
+//        
+//        do{
+//            //this searches for the track (using QueryTypeTrack) and outputs and SPTList but I dont understand how to query the SPT list
+//            //Also tried assigning searhResultPage to this, but I get an "Ambiguous Reference" error
+//            try searchResult = SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
+//        } catch {
+//            print("Not a valid search term")
+//        }
+//   
+//        UIApplication.sharedApplication().openURL(searchResult!)
         
-        //testing how the SPTListPage works 
-        //var searchResultPage: SPTListPage
         
-        do{
-            //this searches for the track (using QueryTypeTrack) and outputs and SPTList but I dont understand how to query the SPT list
-            //Also tried assigning searhResultPage to this, but I get an "Ambiguous Reference" error
-            try searchResult = SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
-        } catch {
-            print("Not a valid search term")
+
+                
+        // Send HTTP GET Request to retrieve recommended songs
+        
+        // Set target genre and tempo
+//        let genre = "hip_hop"
+//        let tempo = 180.0
+//        let market = "US"
+        
+        // Define server side script URL
+//        let scriptUrl = "https://api.spotify.com/v1/recommendations"
+        
+        
+        // ?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US
+        // Add parms
+//        let urlWithParms = scriptUrl + "?seed_genre=\(genre)"
+        let urlWithParms = "https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US"
+        
+        // Create NSURL Object
+        let myUrl = NSURL(string: urlWithParms);
+        
+        // Creaste URL Request
+        let request = NSMutableURLRequest(URL: myUrl!);
+        
+        // Set request HTTP method to GET. It could be POST as well
+        request.HTTPMethod = "GET"
+        
+        let headersAuth = NSString(format: "Bearer %@", auth.session.accessToken)
+        
+        // Add Authorization Token value
+        request.addValue(headersAuth as String, forHTTPHeaderField: "Authorization")
+        
+        // Excute HTTP Request
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            // Check for error
+            if error != nil
+            {
+                print("error=\(error)")
+                return
+            }
+            
+            // Print out response string
+//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//            print("responseString = \(responseString)")
+            
+            
+            // Convert server json response to NSDictionary
+            do {
+                if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                    
+                    let tracks = convertedJsonIntoDict["tracks"] as! [[String:AnyObject]]
+                    
+//                    for (key, value) in tracks {
+//                        
+//                    }
+                    
+                    // store URI
+                    let URI = tracks[0]["uri"]
+                    print("URI: \(URI!)")
+                    
+                    // store song title
+                    let songTitle = tracks[0]["name"]
+                    print("Song Title: \(songTitle!)")
+                    
+                    let artists = tracks[0]["artists"] as! NSArray
+                    
+                    // grab each artist name and add to array
+                    var allArtists: [String] = []
+                    
+                    for i in 0..<artists.count {
+                        let artist = artists[i] as! NSDictionary
+                        let artistName = artist["name"] as! String
+                        allArtists.append(artistName)
+                        print("Artist: \(artistName)")
+                    }
+                    
+ 
+
+                    
+                    
+                }
+
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
         }
-   
-        UIApplication.sharedApplication().openURL(searchResult!)
         
+        task.resume()
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
