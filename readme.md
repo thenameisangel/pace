@@ -14,16 +14,16 @@
 	- [ ] Create core graphics for rounded Spotify button
 - [ ] PastRunTableViewController
 	- [ ] Get run data to show up (distance, time, pace)
-	- [ ] Format prototype cell
+	- [x] Format prototype cell
 - [ ] PlaylistViewController
-	- [ ] Display song data correctly
+	- [x] Display song data correctly
 - [ ] RunSummaryViewController
 	- [ ] Add map view
 	- [ ] Match Run Tracker UI
 - [ ] RunTrackerViewController
 	- [x] Fix font sizes of timer and mileage count when app runs
 	- [x] Constraints
-	- [ ] Fix strange space between timer & pace and respective units
+	- [x] Fix strange space between timer & pace and respective units
 	- [ ] Convert seconds to mm:hh:ss
 - [ ] SPTAudioStreamingController
 - [ ] SearchViewController
