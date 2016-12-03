@@ -29,47 +29,6 @@ class HomeViewController: UIViewController {
             print("Valid session exists")
             return
         }
-
-        
-//        loginButton.hidden = true
-     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: "loginSuccessful", object: nil)
-//
-//        
-//        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        
-//        //session already exists
-//        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
-//            let sessionDataObj = sessionObj as! NSData
-//            
-//            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
-//            
-//            if !session.isValid() {
-//                SPTAuth.defaultInstance().renewSession(session, callback: { (error:NSError!, session:SPTSession!) -> Void in
-//                    if error == nil {
-//                        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-//                        userDefaults.setObject(sessionData, forKey: "SpotifySession")
-//                        userDefaults.synchronize()
-//
-//                        self.session = session
-//                        //playUsingSession()
-//                    } else {
-//                        print("Error refreshing session")
-//                    }
-//                })
-//            } else {
-//                print("session valid")
-//                //playingUsingSession()
-//            }
-//        } else {
-//            //session doesn't exist
-//            loginButton.hidden = false
-//        }
-        
-    }
-    
-    func updateAfterFirstLogin() {
-
-        loginButton.hidden = true
         
     }
     
@@ -90,7 +49,6 @@ class HomeViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
