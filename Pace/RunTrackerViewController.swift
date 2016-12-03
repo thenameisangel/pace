@@ -34,6 +34,22 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     @IBOutlet weak var targetPaceLbl: UITextView!
     @IBOutlet weak var endRunBtn: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginToPlayer()
+        
+        // MARK: Set font
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(120)
+        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
+        targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
+        songTitleLbl.font = UIFont(name: "Avenir", size: 11)
+        artistLbl.font = UIFont(name: "Avenir", size: 11)
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     // MARK: Actions
     // Saving the Run
@@ -110,26 +126,9 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         distanceRunLbl.textAlignment = .Center
 //        targetPaceLbl.text = targetPace + " minutes per mile"
     }
-
-    
-    //MARK: Spotify Player
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loginToPlayer()
-        // MARK: Set font
-        distanceRunLbl.font = UIFont.boldSystemFontOfSize(120)
-        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
-        targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
-        songTitleLbl.font = UIFont(name: "Avenir", size: 11)
-        artistLbl.font = UIFont(name: "Avenir", size: 11)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func startNextSong() {
-        let uri = self.playlist[0]["uri"] as! String
+        let uri = playlist[0]["uri"] as! String
         
         player!.playSpotifyURI(uri, startingWithIndex: 0, startingWithPosition: 0) { (error: NSError?) in
             if error != nil {

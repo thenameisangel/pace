@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.songs.count
+        return songs.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

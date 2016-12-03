@@ -37,8 +37,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         // Send HTTP GET Request to retrieve recommended songs
         
         // Set target args
-        let genre = "hip-hop"
-        let tempo = 180.0
+        let genre = "country"
+        let tempo = 120.0
         let market = "US"
         let limit = 100
         
@@ -118,9 +118,15 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                         
                     }
                     
+                    
                     // print playlist
-                    print(self.playlist)
+                    // print(self.playlist.count)
                     print("Number of songs: \(self.playlist.count)")
+                    
+                    // reload table after json data is appended to playlist array
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
                 }
                 
                 // print error if request fails
@@ -138,18 +144,32 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songs.count
+        return playlist.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("PlaylistSongCell", forIndexPath: indexPath) as! PlaylistSongCell
-        let song = songs[indexPath.row]
+        let song = playlist[indexPath.row]
         
-        cell.songLabel.text = song[1]
-        cell.artistLabel.text = song[0]
-        cell.albumLabel.text = song[2]
+        // Populate cell song and album
+        cell.songLabel.text = song["title"] as? String
+        cell.albumLabel.text = song["album"] as? String
         
+        // Populate artist
+        if (song["artists"] != nil) {
+            let artists = song["artists"] as! NSArray
+            
+            // Handle multiple artists
+            if artists.count < 1 {
+                cell.artistLabel.text = artists[0] as! String
+            } else {
+                let artist = artists[0] as! String
+                let features = artists.componentsJoinedByString(", ")
+                cell.artistLabel.text = "\(artist) feat. \(features)"
+            }
+        }
+
         return cell
     }
     
