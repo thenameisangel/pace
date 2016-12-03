@@ -18,7 +18,6 @@
 		0B8C34811DDCDC2F00123EBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8C34801DDCDC2F00123EBE /* SystemConfiguration.framework */; };
 		0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */; };
 		0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */; };
-		0BD8D3821DED22A4007539AA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D3811DED22A4007539AA /* Utils.swift */; };
 		0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */; };
 		0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */; };
 		0BE0400C1DD1ACA60056A6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE0400A1DD1ACA60056A6A3 /* Main.storyboard */; };
@@ -63,7 +62,6 @@
 		0B8C34801DDCDC2F00123EBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongResultCell.swift; sourceTree = "<group>"; };
-		0BD8D3811DED22A4007539AA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0BE040031DD1ACA60056A6A3 /* Pace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			children = (
 				0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */,
 				0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */,
-				0BD8D3811DED22A4007539AA /* Utils.swift */,
 				0BE0400A1DD1ACA60056A6A3 /* Main.storyboard */,
 				2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */,
 				0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */,
@@ -322,7 +319,6 @@
 				3C569D611DEC0A7D00CFFF13 /* LineSeparatorView.swift in Sources */,
 				2823C42F1DD97BF100C88BE1 /* PlaylistViewController.swift in Sources */,
 				44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */,
-				0BD8D3821DED22A4007539AA /* Utils.swift in Sources */,
 				0BBEB2F21DD4FE400083C5F1 /* SongResultCell.swift in Sources */,
 				0BE040091DD1ACA60056A6A3 /* HomeViewController.swift in Sources */,
 				0B8C347D1DDAB50400123EBE /* NewRunViewController.swift in Sources */,
