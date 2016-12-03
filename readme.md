@@ -37,12 +37,16 @@
 	- [ ] Refresh tokens
 - [ ] Music playback
 	- [x] Single song playback
-	- [ ] Embed music player
+	- [ ] Playback a playlist of songs using previous/next buttons on run tracker
 - [ ] Set up song querying
-	- [ ] Research Spotify song attributes
-	- [ ] Convert user inputs (height, pace, genre, etc.) into relevant query parms
-- [ ] Create algorithm for pulling songs
-	- [ ] Do we want randomized playlists or the same songs for every identical query 
+	- [x] Research Spotify song attributes
+	- [x] Make server request for song recs based on genre and tempo
+	- [x] Pull song data and store in temp dictionary
+	- [ ] Add songs to Core Data
+- [ ] Convert user inputs (height, pace, genre, etc.) into relevant query parms
+- [x] Create algorithm for pulling songs
+	- [x] Randomized playlists for every identical query 
 
 ### Run Tracker
 - [ ] Save locations to Core Data
+- [ ] Convert height into stride rate?
