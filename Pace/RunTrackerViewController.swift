@@ -18,7 +18,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     let callURL = "pace://returnAfterLogin"
     let tokenSwapURL = "http://localhost:1234/swap"
     let tokenRefreshServiceURL = "http://localhost:1234/refresh"
-    
+    var playlist: [AnyObject] = []
     let auth: SPTAuth = SPTAuth.defaultInstance()
     
 
@@ -128,15 +128,14 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.didReceiveMemoryWarning()
     }
     
-
-    
     func startNextSong() {
-        player!.playSpotifyURI("spotify:track:4mU5iXHeLgbR94siF7p1sY", startingWithIndex: 0, startingWithPosition: 0, callback: {(error: NSError?) in
+        let uri = self.playlist[0]["uri"] as! String
+        
+        player!.playSpotifyURI(uri, startingWithIndex: 0, startingWithPosition: 0) { (error: NSError?) in
             if error != nil {
                 print("Unable to play song")
             }
-        })
-        
+        }
         
     }
     
@@ -175,111 +174,11 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
 //   
 //        UIApplication.sharedApplication().openURL(searchResult!)
 
-                
-        // Send HTTP GET Request to retrieve recommended songs
-        
-        // Set target args
-        let genre = "hip-hop"
-        let tempo = 180.0
-        let market = "US"
-        let limit = 100
-        
-        // Define server side script URL
-        let scriptUrl = "https://api.spotify.com/v1/recommendations"
-        
-        // Add parms
-        let urlWithParms = scriptUrl + "?limit=\(limit)&seed_genres=\(genre)&target_tempo=\(tempo)&market=\(market)"
-        
-        // Create NSURL Object
-        let myUrl = NSURL(string: urlWithParms);
-        
-        // Creaste URL Request
-        let request = NSMutableURLRequest(URL: myUrl!);
-        
-        // Set request HTTP method to GET. It could be POST as well
-        request.HTTPMethod = "GET"
-        
-        let headersAuth = NSString(format: "Bearer %@", auth.session.accessToken)
-        
-        // Add Authorization Token value
-        request.addValue(headersAuth as String, forHTTPHeaderField: "Authorization")
-        
-        // Excute HTTP Request
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
-            
-            // Check for error
-            if error != nil
-            {
-                print("error=\(error)")
-                return
-            }
-            
-            // Print out response string
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
-            
-            
-            // Convert server json response to NSDictionary
-            do {
-                if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                    // create dict to hold all retrieved tracks
-                    var playlist: [String: AnyObject] = [:]
-                    
-                    // cast tracks as an array of dictionaries
-                    let tracks = convertedJsonIntoDict["tracks"] as! [[String:AnyObject]]
-                    
-                    // access each track information
-                    for i in 0..<tracks.count {
-                        
-                        // store song details
-                        let uri = tracks[i]["uri"] as! String
-                        let id = tracks[i]["id"] as! String
-                        let songTitle = tracks[i]["name"] as! String
-                        let allArtists = tracks[i]["artists"] as! NSArray
-                        
-                        // add multiple artists on a track to an array
-                        var artists: [String] = []
-                        
-                        for j in 0..<allArtists.count {
-                            let artist = allArtists[j] as! NSDictionary
-                            let artistName = artist["name"] as! String
-                            artists.append(artistName)
-                        }
-                        
-                        // create song dict object
-                        let song: [String: AnyObject] = [
-                        "artists": artists,
-                        "title": songTitle,
-                        "URI": uri
-                        ]
-                        
-                        // add song to playlist
-                        playlist[id] = song
-                        
-                    }
-                    
-                    // print all song data and count
-                    for (key, value) in playlist {
-                        print(key, value)
-                    }
-                    print("Number of songs: \(playlist.count)")
-                }
-            
-            // print error if request fails
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
-        }
-        
-        task.resume()
-
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
-        searchForSong()
-        //startNextSong()
+//        searchForSong()
+        startNextSong()
         print("Successful login!")
     }
     
