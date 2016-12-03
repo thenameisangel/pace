@@ -4,6 +4,7 @@
 
 ### Views
 - [ ] HomeViewController
+	- [ ] Make Spotify button look clickable (or make a link below to make it more intuitive?)
 - [ ] NewRunViewController
 	- [ ] Validations for each text field
 	- [ ] Conditional segue for height
@@ -22,9 +23,9 @@
 - [ ] RunTrackerViewController
 	- [x] Fix font sizes of timer and mileage count when app runs
 	- [x] Constraints
+	- [ ] Fix strange space between timer & pace and respective units
 	- [ ] Convert seconds to mm:hh:ss
 - [ ] SPTAudioStreamingController
-	- [ ] Get song player bar on run tracker view
 - [ ] SearchViewController
 	- [ ] Add auto-search as user edits search bar field
 	- [ ] Pass user-selected song to the NewRunViewController to use for target bpm
