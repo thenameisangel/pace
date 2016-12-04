@@ -25,8 +25,8 @@
                                     <navigationItem title="Start a New Run!" id="Ch7-3b-bXh"/>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-MB-SbE">
-                                <rect key="frame" x="28" y="85" width="544" height="518"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-MB-SbE">
+                                <rect key="frame" x="28" y="114" width="544" height="491"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-TY-eB7">
                                         <rect key="frame" x="131" y="0.0" width="283" height="118"/>
@@ -193,12 +193,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qgB-Fl-fiN">
-                                        <rect key="frame" x="167" y="398" width="210" height="120"/>
+                                        <rect key="frame" x="122" y="398" width="300" height="93"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="piY-0r-QdL"/>
                                                     <constraint firstAttribute="width" constant="210" id="uEu-hd-rJz"/>
                                                     <constraint firstAttribute="height" constant="60" id="zx9-FW-7Lg"/>
                                                 </constraints>
@@ -206,13 +207,18 @@
                                                 <state key="normal" title="GENERATE PLAYLIST">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="uEu-hd-rJz"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
                                                     <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
-                                                <rect key="frame" x="0.0" y="60" width="210" height="60"/>
+                                                <rect key="frame" x="0.0" y="60" width="300" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="210" id="Sfg-fC-lmh"/>
                                                     <constraint firstAttribute="height" constant="60" id="sht-ek-FCw"/>
@@ -221,6 +227,12 @@
                                                 <state key="normal" title="VIEW PAST RUNS">
                                                     <color key="titleColor" red="0.043137254901960784" green="0.40000000000000002" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Sfg-fC-lmh"/>
+                                                        <exclude reference="sht-ek-FCw"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="4q9-Sk-cot"/>
                                                     <segue destination="Ug7-pL-jKE" kind="show" id="1SZ-rq-Tcv"/>
@@ -230,6 +242,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="K0x-B9-OII" firstAttribute="centerX" secondItem="c5Z-MB-SbE" secondAttribute="centerX" id="A2x-N8-Nv4"/>
+                                    <constraint firstItem="qgB-Fl-fiN" firstAttribute="centerX" secondItem="c5Z-MB-SbE" secondAttribute="centerX" id="CW2-go-J9u"/>
                                     <constraint firstItem="dRr-Gu-h4V" firstAttribute="leading" secondItem="c5Z-MB-SbE" secondAttribute="leading" id="iPB-x1-o1F"/>
                                     <constraint firstAttribute="trailing" secondItem="dRr-Gu-h4V" secondAttribute="trailing" id="qOQ-EB-1I7"/>
                                 </constraints>
@@ -239,7 +253,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="c5Z-MB-SbE" secondAttribute="trailing" constant="8" id="PwZ-UI-hjO"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="8" id="brb-Gv-8V5"/>
-                            <constraint firstItem="c5Z-MB-SbE" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="75" id="j0f-hi-sva"/>
+                            <constraint firstItem="c5Z-MB-SbE" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" constant="50" id="j0f-hi-sva"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="centerX" secondItem="pa6-79-Jbz" secondAttribute="centerX" id="sQL-83-XU7"/>
                         </constraints>
                     </view>
@@ -975,7 +989,7 @@
         <image name="rewind" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qwd-UR-73m"/>
+        <segue reference="Tzi-a6-tLF"/>
         <segue reference="nd9-3C-kxk"/>
     </inferredMetricsTieBreakers>
 </document>

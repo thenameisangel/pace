@@ -31,41 +31,92 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchSong()
+        searchSong()
     }
     
     func searchSong() {
-//        var request: NSURL
-    
-//        testing how the SPTListPage works
-//                    var searchResultPage: NSArray = []
-//
-//        do {
-//            //this searches for the track (using QueryTypeTrack) and outputs and SPTList but I dont understand how to query the SPT list
-//            //Also tried assigning searhResultPage to this, but I get an "Ambiguous Reference" error
-//            try request = SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
-//
-//            let task = NSURLSession.sharedSession().dataTaskWithURL(request) {
-//                data, response, error in
-//                
-//                // Check for error
-//                if error != nil
-//                {
-//                    print("error=\(error)")
-//                    return
-//                }
-////                
-////                let response = data as! NSData!
-////                print(response)
-//            }
-//            
-//            task.resume()
-//
-//        } catch {
-//            print("Not a valid search term")
-//        }
+        var request = NSURL(string: "")
+
+
+        do {
+            // get URL with parms and access token
+            request = try SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
+            
+            // turn URL into URLRequest
+            let request = NSMutableURLRequest(URL: request!);
+            
+            // get data from GET request
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                data, response, error in
+                
+                if error != nil
+                {
+                    print("error = \(error)")
+                    return
+                }
+                
+                if let data = data {
+                do {
+                    // decode data and print as string
+//                    let responseString = String(data: data, encoding: NSUTF8StringEncoding) ?? "Data could not be printed"
+//                    print(responseString)
+                    
+                    if let results = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
+                        print(results)
+                        
+                        let tracks = results["tracks"]!["items"] as! [[String:AnyObject]]
+                        
+                        for i in 0..<tracks.count {
+                            // store song details
+                            let album = tracks[i]["album"]!["name"] as! String
+                            let uri = tracks[i]["uri"] as! String
+                            let id = tracks[i]["id"] as! String
+                            let songTitle = tracks[i]["name"] as! String
+                            let allArtists = tracks[i]["artists"] as! NSArray
+                        
+                            // add multiple artists on a track to an array
+                            var artists: [String] = []
+
+                            for j in 0..<allArtists.count {
+                                let artist = allArtists[j] as! NSDictionary
+                                let artistName = artist["name"] as! String
+                                artists.append(artistName)
+                            }
+
+                            // create song object
+                            let song: [String: AnyObject] = [
+                                "id": id,
+                                "artists": artists,
+                                "title": songTitle,
+                                "album": album,
+                                "uri": uri
+                            ]
+                            
+                            // add song to search results
+                            self.searchResults.append(song)
+                            print(song)
+                        }
+
+                    }
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                    }
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+
+            }
+                task.resume()
+
+            }
+            
+        // catch SPT search request
+        catch let error as NSError {
+            print("Error: \(error)")
+        }
     }
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
