@@ -15,7 +15,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let auth: SPTAuth = SPTAuth.defaultInstance()
     var searchResults: [AnyObject] = []
     var keywords = ""
-    var seedSong: [String:AnyObject] = [:]
+    var seedSong: [String: AnyObject] = [:]
     
     //create temp list of song objects
     let songs: [[String]] = [["Usher", "Burn", "Confessions"],
@@ -62,8 +62,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                    print(responseString)
                     
                     if let results = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
-                        print(results)
-                        
+            
                         let tracks = results["tracks"]!["items"] as! [[String:AnyObject]]
                         
                         for i in 0..<tracks.count {
@@ -94,7 +93,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
                             // add song to search results
                             self.searchResults.append(song)
-                            print("Number of search results: \(self.searchResults.count)")
                             
                             // reload table after json data is appended to playlist array
                             dispatch_async(dispatch_get_main_queue(), {
@@ -159,7 +157,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if segue.identifier == "songSelectSegue"{
             let playlistVC = segue.destinationViewController as! PlaylistViewController
-            playlistVC.seedSong = seedSong
+            let index = tableView.indexPathForSelectedRow!.row
+            playlistVC.seedSong = self.searchResults[index] as! [String:AnyObject]
         }
     }
 
