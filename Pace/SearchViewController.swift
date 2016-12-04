@@ -94,7 +94,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
                             // add song to search results
                             self.searchResults.append(song)
-                            print(song)
+                            print("Number of search results: \(self.searchResults.count)")
+                            
+                            // reload table after json data is appended to playlist array
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.tableView.reloadData()
+                            })
                         }
 
                     }
@@ -122,17 +127,31 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songs.count
+        return self.searchResults.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("SongResultCell", forIndexPath: indexPath) as! SongResultCell
-        let song = songs[indexPath.row]
+        let song = searchResults[indexPath.row]
         
-        cell.albumTitleLbl.text = song[2] as? String
-        cell.artistNameLbl.text = song[0] as? String
-        cell.songTitleLbl.text = song[1] as? String
+        // Populate cell song and album
+        cell.songTitleLbl.text = song["title"] as? String
+        cell.albumTitleLbl.text = song["album"] as? String
+        
+        // Populate artist
+        if (song["artists"] != nil) {
+            let artists = song["artists"] as! NSArray
+            
+            // Handle multiple artists
+            if artists.count < 1 {
+                cell.artistNameLbl.text = artists[0] as! String
+            } else {
+                let artist = artists[0] as! String
+                let features = artists.componentsJoinedByString(", ")
+                cell.artistNameLbl.text = "\(artist) feat. \(features)"
+            }
+        }
         
         return cell
     }

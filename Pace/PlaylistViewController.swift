@@ -112,7 +112,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     // print playlist
                     // print(self.playlist.count)
-                    print("Number of songs: \(self.playlist.count)")
+//                    print("Number of songs: \(self.playlist.count)")
                     
                     // reload table after json data is appended to playlist array
                     dispatch_async(dispatch_get_main_queue(), {
