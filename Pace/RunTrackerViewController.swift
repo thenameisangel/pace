@@ -35,8 +35,9 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loginToPlayer()
-        //loadSongData()
+        
+        loginToPlayer()
+        loadSongData()
         
         // Set font
         distanceRunLbl.font = UIFont.boldSystemFontOfSize(85)
