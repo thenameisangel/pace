@@ -27,6 +27,81 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         getUserId()
     }
     
+    
+    func createPlaylist() {
+        // POST: Create a playlist on the current user's account
+        
+        // Create NSURL Object
+        print("Username for POST: \(username)")
+        let myUrl = NSURL(string: "https://api.spotify.com/v1/users/\(username)/playlists");
+        
+        // Creaste URL Request
+        let request = NSMutableURLRequest(URL: myUrl!);
+        
+        // Set request HTTP method
+        request.HTTPMethod = "POST"
+        
+        // Add access token and content type to header
+        let headersAuth = NSString(format: "Bearer %@", auth.session.accessToken)
+        let contentType = "application/json"
+        request.addValue(headersAuth as String, forHTTPHeaderField: "Authorization")
+        request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+        
+        // Add data to body of HTTP request
+        do {
+            // Create data for sending
+            let data = ["name": "Pace Sample Playlist", "public": false] as Dictionary
+            
+            // Convert to json
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
+            
+            // Attach data to body of request
+            request.HTTPBody = jsonData
+            
+        } catch let error as NSError {
+            print("JSON preparation error: \(error)")
+        }
+        
+        // Excute HTTP Request
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            // Check for error
+            if error != nil
+            {
+                print("error=\(error)")
+                return
+            }
+            
+            // Print out response string
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+            
+            // Convert server json response to NSDictionary
+            //            do {
+            //                if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+            //
+            //                    // cast details as an array of dictionaries
+            //                    let details = convertedJsonIntoDict["id"] as! String
+            //
+            //                    // update user id
+            //                    dispatch_async(dispatch_get_main_queue(), {
+            //                        self.username = details
+            //                    })
+            //                }
+            //
+            //                // print error if request fails
+            //            } catch let error as NSError {
+            //                print(error.localizedDescription)
+            //            }
+            
+        }
+        
+        task.resume()
+    }
+    
+
+    
     func seedTempo() {
         // SAMPLE URL "https://api.spotify.com/v1/audio-features/SONGID"
         
@@ -228,6 +303,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     // update user id
                     dispatch_async(dispatch_get_main_queue(), {
                         self.username = details
+                        self.createPlaylist()
                     })
                 }
                 
