@@ -23,13 +23,23 @@ class RunSummaryViewController: UIViewController {
     @IBOutlet weak var paceLabel: UITextView!
     @IBOutlet weak var targetpaceLabel: UITextView!
     
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     // MARK: Actions
-    @IBAction func viewRuns(sender: AnyObject) {
-    }
 
     @IBOutlet weak var viewPlaylist: UIButton!
     
+    @IBAction func pastRuns(sender: UIButton) {
+        self.performSegueWithIdentifier("viewPastRuns", sender: self)
+    }
+    
     // MARK: Prepare Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewPastRuns"{
+            let vc = segue.destinationViewController as! PastRunsTableViewController
+            vc.navBar.hidesBackButton = true
+        }
+    }
     
     // MARK: Variables
     var run: NSManagedObject!

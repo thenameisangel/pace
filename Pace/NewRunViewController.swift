@@ -18,9 +18,12 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var songSearchBtn: UIButton!
     @IBOutlet weak var viewPastRunsBtn: UIButton!
     @IBOutlet weak var newPlaylistBtn: UIButton!
+    @IBOutlet weak var navBar: UINavigationItem!
     @IBAction func songSearch(sender: AnyObject) {
     }
-    @IBAction func viewPastRuns(sender: AnyObject) {
+    
+    @IBAction func PastRuns(sender: UIButton) {
+        self.performSegueWithIdentifier("PastRuns", sender: nil)
     }
     
     var targetPace:String!
@@ -55,6 +58,11 @@ class NewRunViewController: UIViewController {
         if segue.identifier == "searchResultsSegue" {
             let nextScene = segue.destinationViewController as? SearchViewController
             nextScene?.keywords = searchTermTxt.text!
+        }
+        
+        if segue.identifier == "PastRuns"{
+            let nextScene = segue.destinationViewController as? PastRunsTableViewController
+            nextScene?.navBar.rightBarButtonItem = nil
         }
     }
 }

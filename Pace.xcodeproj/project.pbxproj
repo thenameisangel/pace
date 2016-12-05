@@ -141,23 +141,23 @@
 			isa = PBXGroup;
 			children = (
 				0BE040061DD1ACA60056A6A3 /* AppDelegate.swift */,
-				0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */,
 				0BE0400A1DD1ACA60056A6A3 /* Main.storyboard */,
-				2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */,
-				0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */,
-				0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */,
 				0BE040121DD1ACA60056A6A3 /* LaunchScreen.storyboard */,
 				0BE040151DD1ACA60056A6A3 /* Info.plist */,
 				0BE0400D1DD1ACA60056A6A3 /* Pace.xcdatamodeld */,
 				0B50E64D1DD4B1AE00543DD0 /* Pace-Bridging-Header.h */,
+				0BE040081DD1ACA60056A6A3 /* HomeViewController.swift */,
+				0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */,
+				0BBEB2EF1DD4FD520083C5F1 /* SearchViewController.swift */,
+				0BBEB2F11DD4FE400083C5F1 /* SongResultCell.swift */,
+				2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */,
+				2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */,
+				0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */,
+				0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */,
 				44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */,
 				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
-				2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */,
-				0B8C347A1DDAB4FE00123EBE /* RunSummaryViewController.swift */,
-				0B6E18F61DEE6459004FC750 /* Assets.xcassets */,
-				0B8C347C1DDAB50400123EBE /* NewRunViewController.swift */,
-				0B8C347E1DDAB50A00123EBE /* RunTrackerViewController.swift */,
 				3C569D601DEC0A7D00CFFF13 /* LineSeparatorView.swift */,
+				0B6E18F61DEE6459004FC750 /* Assets.xcassets */,
 			);
 			path = Pace;
 			sourceTree = "<group>";

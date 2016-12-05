@@ -10,44 +10,66 @@ import UIKit
 import CoreData
 
 class PastRunsTableViewController: UITableViewController {
-    //COMMENTING OUT FOR DEMO PURPOSES
-    //var runArray: [NSManagedObject] = []
-    let runArray: [[String]] = [["01/12/15", "2.78 mi", "8:34\"/mi", "28:34\""],
-    ["01/18/15", "2.78 mi", "8:34\"/mi", "30:34\""],
-    ["01/19/15", "1.18 mi", "8:55\"/mi", "12:34\""],
-    ["02/21/15", "2.36 mi", "8:01\"/mi", "20:34\""],
-    ["02/30/15", "5.34 mi", "7:54\"/mi", "45:34\""],
-    ["04/12/15", "6.17 mi", "7:34\"/mi", "52:34\""]]
     
+    // MARK: Properties
     
+    @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var newRunButton: UIBarButtonItem!
+    
+    // MARK: Actions
+    
+    @IBAction func newRun(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("newRun", sender: nil)
+    }
+    
+    // MARK: Prepare Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newRun" {
+            let vc = segue.destinationViewController as! NewRunViewController
+            vc.navBar.hidesBackButton = true
+        }
+        
+        if segue.identifier == "runSummary" {
+            let vc = segue.destinationViewController as! RunSummaryViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            let run = Runs[index]
+            vc.run = run
+        }
+    }
+    
+    // MARK: Variables
+    
+    var Runs = [NSManagedObject]()
+    var managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UNCOMMENT AFTER DEMO
-//        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-//        let moc = managedObjectContext
-//        let runsFetch = NSFetchRequest(entityName: "Run")
-//        
-//        do {
-//            runArray = try moc.executeFetchRequest(runsFetch) as! [NSManagedObject]
-//        } catch {
-//            fatalError("Failed to fetch runs: \(error)")
-//        }
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        fetchRuns()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
+    
+    // MARK: Fetching
+    
+    func fetchRuns() {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Run")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            Runs = results as! [NSManagedObject]
+        }
+            
+        catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -55,75 +77,30 @@ class PastRunsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return runArray.count
+        return Runs.count
     }
-
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pastRunCell", forIndexPath: indexPath) as! PastRunTableViewCell
         
+        let run = Runs[indexPath.row]
         
-        cell.runDateLbl.text = runArray[indexPath.row][0]
-        cell.distanceLbl.text = runArray[indexPath.row][1]
-        //cell.paceLbl.text = runArray[indexPath.row][2]
-        cell.timeLbl.text = runArray[indexPath.row][3]
+        let dateformatter = NSDateFormatter()
+        dateformatter.dateFormat = "MM/dd/yyyy"
+        let date = run.valueForKey("timestamp") as! NSDate
+        let newdate = dateformatter.stringFromDate(date)
         
-//        let run = runArray[indexPath.row]
+        let distance = run.valueForKey("distance") as! Float
+        let duration = run.valueForKey("duration") as! Float
         
-//        
-//        cell.runDateLbl.text = run.valueForKey("date") as? String
-//        cell.distanceLbl.text = run.valueForKey("distance") as? String
-//        cell.paceLbl.text = run.valueForKey("pace") as? String
-//        cell.timeLbl.text = run.valueForKey("time") as? String
+        let actualpace = distance/duration
+        
+        cell.runDateLbl.text = String(newdate)
+        cell.distanceLbl.text = String(distance) + " mi"
+        cell.paceLbl.text = String(actualpace) + " mi/min"
+        cell.timeLbl.text = String(duration) + " min"
 
-        
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

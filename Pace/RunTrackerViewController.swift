@@ -113,11 +113,12 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         if segue.identifier == "endRunSegue"{
             let vc = segue.destinationViewController as! RunSummaryViewController
             vc.run = currentRun
+            vc.navBar.hidesBackButton = true
         }
     }
     
     // MARK: Variables
-    var targetPace: String!
+    var targetPace = 8.0
     var seconds = 0.0
     var distance = 0.0
     var currentRun: NSManagedObject!
