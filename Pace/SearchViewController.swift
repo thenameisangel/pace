@@ -40,7 +40,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         do {
             // get URL with parms and access token
-            request = try SPTSearch.createRequestForSearchWithQuery("Fake Tales of San Francisco", queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
+            request = try SPTSearch.createRequestForSearchWithQuery(self.keywords, queryType: SPTSearchQueryType.QueryTypeTrack, offset:1, accessToken: auth.session.accessToken).URL!
             
             // turn URL into URLRequest
             let request = NSMutableURLRequest(URL: request!);

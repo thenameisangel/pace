@@ -11,6 +11,7 @@ import UIKit
 
 class NewRunViewController: UIViewController {
     
+    @IBOutlet weak var searchTermTxt: UITextField!
     @IBOutlet weak var selectGenreTxt: UITextField!
     @IBOutlet weak var enterHeightTxt: UITextField!
     @IBOutlet weak var enterTargetPaceTxt: UITextField!
@@ -49,6 +50,11 @@ class NewRunViewController: UIViewController {
         if segue.identifier == "newRunPlaylistSegue"{
             let nextScene = segue.destinationViewController as? PlaylistViewController
             nextScene?.targetPace = targetPace
+        }
+        
+        if segue.identifier == "searchResultsSegue" {
+            let nextScene = segue.destinationViewController as? SearchViewController
+            nextScene?.keywords = searchTermTxt.text!
         }
     }
 }
