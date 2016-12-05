@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMB-3w-qKe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMB-3w-qKe">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -306,7 +306,7 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-Kx-4Ob">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-Kx-4Ob">
                                                     <rect key="frame" x="0.0" y="25" width="185" height="14"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.78 mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uft-yC-AiR">
@@ -321,7 +321,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9:00&quot;/mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-dI-Gcu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00&quot;/mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-dI-Gcu">
                                                             <rect key="frame" x="145" y="0.0" width="40" height="14"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -492,6 +492,9 @@
                                                     <constraint firstAttribute="height" constant="29" id="gqw-Qv-gaB"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="rewind"/>
+                                                <connections>
+                                                    <action selector="btnPreviousSong:" destination="o9d-Hx-MQg" eventType="touchUpInside" id="d6h-fE-VGo"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="QZ3-if-1RP">
                                                 <rect key="frame" x="36" y="0.0" width="418" height="29"/>
@@ -524,6 +527,9 @@
                                                     <constraint firstAttribute="height" constant="29" id="DDb-Lx-IA4"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="forward"/>
+                                                <connections>
+                                                    <action selector="btnNextSong:" destination="o9d-Hx-MQg" eventType="touchUpInside" id="Q4f-R2-XIi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -690,16 +696,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fRV-go-dKq">
-                                <rect key="frame" x="55" y="99" width="490" height="422"/>
+                                <rect key="frame" x="55" y="99" width="490" height="466"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h5g-AC-DVl">
-                                        <rect key="frame" x="0.0" y="0.0" width="490" height="172"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h5g-AC-DVl">
+                                        <rect key="frame" x="0.0" y="0.0" width="490" height="216"/>
                                         <connections>
                                             <outlet property="delegate" destination="epv-aE-x1i" id="I5m-sN-BqB"/>
                                         </connections>
                                     </mapView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ga-1M-S3b">
-                                        <rect key="frame" x="0.0" y="192" width="490" height="75"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ga-1M-S3b">
+                                        <rect key="frame" x="0.0" y="236" width="490" height="75"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vW5-iv-9Oi">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
@@ -773,8 +779,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFY-dE-GOO">
-                                        <rect key="frame" x="0.0" y="287" width="490" height="75"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFY-dE-GOO">
+                                        <rect key="frame" x="0.0" y="331" width="490" height="75"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HWT-Wj-kfX">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
@@ -849,7 +855,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="feH-j2-7hJ">
-                                        <rect key="frame" x="0.0" y="382" width="490" height="40"/>
+                                        <rect key="frame" x="0.0" y="426" width="490" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phk-WH-kix">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
@@ -1098,6 +1104,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qwd-UR-73m"/>
-        <segue reference="GeF-hY-tnm"/>
+        <segue reference="nd9-3C-kxk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -143,7 +143,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             // Handle multiple artists
             if artists.count < 1 {
-                cell.artistNameLbl.text = artists[0] as! String
+                cell.artistNameLbl.text = artists[0] as? String
             } else {
                 let artist = artists[0] as! String
                 let features = artists.componentsJoinedByString(", ")

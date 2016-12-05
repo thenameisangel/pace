@@ -23,6 +23,9 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
 
     var player: SPTAudioStreamingController?
+    
+    var uri: String!
+    
     let homeVC:HomeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
     
     // MARK: Properties
@@ -37,6 +40,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.viewDidLoad()
         
         loginToPlayer()
+        
         loadSongData()
         
         // Set font
@@ -70,7 +74,30 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
                 let features = artists.componentsJoinedByString(", ")
                 artistLbl.text = "\(artist) feat. \(features)"
             }
+            
+            
+            for i in 0..<song.count {
+                
+                player?.queueSpotifyURI(String(playlist[i]["uri"])){ (error: NSError?) in
+                    if error != nil {
+                        print("Unable to play song")
+                    }
+    
+                
+               // queueSpotifyURI:(NSString *)spotifyUri callback:(SPTErrorableOperationCallback)block
+                
+                }
+            }
+            
         }
+        
+        
+        
+        //playlist[i]["uri"]
+        //player?.queueSpotifyURI(String!, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
+        
+        
+      //  queueSpotifyURI:(NSString *)spotifyUri callback:(SPTErrorableOperationCallback)block
     }
     
     // MARK: Actions
@@ -122,7 +149,12 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         seconds = 0.0
         distance = 0.0
         locations.removeAll(keepCapacity: false)
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+       // timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+        
+        
+        //this is so NStimer works on Kavina's computer w older syntax lmao
+        //timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "eachSecond", userInfo: nil, repeats: true)
+        
         startLocationUpdates()
     }
     
@@ -177,7 +209,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     // MARK: Audio
     func startNextSong() {
-        let uri = playlist[0]["uri"] as! String
+        uri = playlist[0]["uri"] as! String
         
         player!.playSpotifyURI(uri, startingWithIndex: 0, startingWithPosition: 0) { (error: NSError?) in
             if error != nil {
@@ -201,6 +233,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         player?.delegate = self
         player?.playbackDelegate = self
         player?.loginWithAccessToken(auth.session.accessToken)
+    
         
     }
     
@@ -213,7 +246,34 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         print(error)
     }
     
+    @IBAction func btnPreviousSong(sender: AnyObject) {
+    
+        player?.skipPrevious(){ (error: NSError?) in
+            if error != nil {
+                print("Unable to play song")
+            }
+            
+        }
+    
+    }
+    
+    
+    @IBAction func btnNextSong(sender: AnyObject) {
+        
+        player?.skipNext(){ (error: NSError?) in
+            if error != nil {
+                print("Unable to play song")
+            }
+            
+
+        }
+
+    }
 }
+
+    
+
+
 
 // MARK: - CLLocationManagerDelegate
 extension RunTrackerViewController: CLLocationManagerDelegate {

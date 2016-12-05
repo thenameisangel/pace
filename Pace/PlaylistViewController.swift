@@ -242,6 +242,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                         // add song to playlist
                         self.playlist.append(song)
                         
+                        
                     }
                     
                     
@@ -294,6 +295,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                 let features = artists.componentsJoinedByString(", ")
                 cell.artistLabel.text = "\(artist) feat. \(features)"
             }
+            
         }
 
         return cell
