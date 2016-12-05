@@ -149,11 +149,11 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         seconds = 0.0
         distance = 0.0
         locations.removeAll(keepCapacity: false)
-       // timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(RunTrackerViewController.eachSecond(_:)), userInfo: nil, repeats: true)
         
         
         //this is so NStimer works on Kavina's computer w older syntax lmao
-        //timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "eachSecond", userInfo: nil, repeats: true)
+//        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "eachSecond", userInfo: nil, repeats: true)
         
         startLocationUpdates()
     }

@@ -22,20 +22,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // If seed song is given
-//        if seedSong.count > 0 {
-//            seedTempo(asynchronousCallback: {
-//                loadPlaylist()
-//            })
-//            print("Seed tempo: \(self.tempo)")
-//        } else {
-//            print("User-entered tempo: \(self.tempo)")
-//        }
-        
-        loadPlaylist()
-        print("Seed song name: \(seedSong["title"])")
-        print("Seed song album: \(seedSong["album"])")
+        seedTempo()
     }
     
     func seedTempo() {
@@ -87,6 +74,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     }
                 
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        print("Seed tempo: \(self.tempo)")
+                        self.loadPlaylist()
+                    })
+                
                 // print error if request fails
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -95,74 +87,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         task.resume()
+        
+
     }
     
     func loadPlaylist() {
-        
-//        func seedTempo() -> () {
-//            if self.seedSong.count > 0 {
-//                // Define server side script URL
-//                let scriptUrl = "https://api.spotify.com/v1/audio-features/"
-//                
-//                // Add parms
-//                let songID = seedSong["id"] as! String
-//                let urlWithParms = scriptUrl + songID
-//                
-//                // Create NSURL Object
-//                let myUrl = NSURL(string: urlWithParms);
-//                
-//                // Creaste URL Request
-//                let request = NSMutableURLRequest(URL: myUrl!);
-//                
-//                // Set request HTTP method to GET. It could be POST as well
-//                request.HTTPMethod = "GET"
-//                
-//                let headersAuth = NSString(format: "Bearer %@", auth.session.accessToken)
-//                
-//                // Add Authorization Token value
-//                request.addValue(headersAuth as String, forHTTPHeaderField: "Authorization")
-//                
-//                // Excute HTTP Request
-//                let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-//                    data, response, error in
-//                    
-//                    // Check for error
-//                    if error != nil
-//                    {
-//                        print("error=\(error)")
-//                        return
-//                    }
-//                    
-//                    // Print out response string
-//                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                    print("responseString = \(responseString)")
-//                    
-//                    
-//                    // Convert server json response to NSDictionary
-//                    do {
-//                        if let attributes = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-//                            
-//                            self.tempo = attributes["tempo"] as! Float
-//                            print("Pulled song tempo: \(self.tempo)")
-//                            
-//                        }
-//                        
-//                        // print error if request fails
-//                    } catch let error as NSError {
-//                        print(error.localizedDescription)
-//                    }
-//                    
-//                }
-//                
-//                task.resume()
-//            }
-//        }
-//        
-//        // return closure function
-//        return seedTempo
-        
-        seedTempo()
-        
         // Send HTTP GET Request to retrieve recommended songs
    
         // target number of search results, MAX = 100
