@@ -16,6 +16,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     var playlist: [AnyObject] = []
     var seedSong: [String: AnyObject] = [:]
     var username = ""
+    var playlistUri = ""
     var genre = "hip-hop"
     var tempo: Float = 180.0
     let market = "US"
@@ -74,26 +75,27 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             // Print out response string
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//            print("responseString = \(responseString)")
             
             // Convert server json response to NSDictionary
-            //            do {
-            //                if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-            //
-            //                    // cast details as an array of dictionaries
-            //                    let details = convertedJsonIntoDict["id"] as! String
-            //
-            //                    // update user id
-            //                    dispatch_async(dispatch_get_main_queue(), {
-            //                        self.username = details
-            //                    })
-            //                }
-            //
-            //                // print error if request fails
-            //            } catch let error as NSError {
-            //                print(error.localizedDescription)
-            //            }
+            do {
+                if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+
+                    // cast details as an array of dictionaries
+                    let uri = convertedJsonIntoDict["uri"] as! String
+
+                    // update user id
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.playlistUri = uri
+                        print(self.playlistUri)
+                    })
+                }
+
+                // print error if request fails
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
             
         }
         
@@ -138,8 +140,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             // Print out response string
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//            print("responseString = \(responseString)")
             
             
             // Convert server json response to NSDictionary
@@ -152,7 +154,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        print("Seed tempo: \(self.tempo)")
+//                        print("Seed tempo: \(self.tempo)")
                         self.loadPlaylist()
                     })
                 
