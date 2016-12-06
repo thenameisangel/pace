@@ -12,7 +12,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    var targetPace: String!
+    var targetPace: String = "8:00"
     var playlist: [AnyObject] = []
     var seedSong: [String: AnyObject] = [:]
     var username = ""
@@ -24,6 +24,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     let market = "US"
     let auth: SPTAuth = SPTAuth.defaultInstance()
     var strideLength: Float!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         // if no seed song is selected
         if seedSong.count == 0 {
             loadPlaylist()
-        
+            
         // if a seed song is selected
         } else {
             seedTempo()
-//            targetPace = String(1/(strideLength*tempo*(1/63360)))
+            targetPace = String(1/(strideLength*tempo*(1/63360)))
         }
 
     }
