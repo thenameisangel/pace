@@ -35,7 +35,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         // if a seed song is selected
         } else {
             seedTempo()
-            targetPace = String(1/(strideLength*tempo*(1/63360)))
+//            targetPace = String(1/(strideLength*tempo*(1/63360)))
         }
 
     }
@@ -441,7 +441,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "startRunSegue"{
             let nextScene = segue.destinationViewController as! RunTrackerViewController
             // pass target pace to the run tracker
-            nextScene.targetPaceLbl.text = targetPace
+//            nextScene.targetPaceLbl.text = targetPace
             
             // pass curated playlist to the run tracker
             nextScene.playlist = self.playlist

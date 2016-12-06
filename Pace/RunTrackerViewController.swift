@@ -55,7 +55,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
         targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
         songTitleLbl.font = UIFont(name: "Avenir", size: 11)
-        artistLbl.font = UIFont(name: "Avenir", size: 11)
     }
     
     // MARK: Actions
@@ -209,9 +208,18 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeMetadata metadata: SPTPlaybackMetadata!) {
         
+        // grab metadata
+        let artist = player!.metadata.currentTrack?.artistName
+        let song = player!.metadata.currentTrack?.name
+        let album = player!.metadata.currentTrack?.albumName
+        
+        let songDetails = [artist!, song!, album!]
+        let songDetailsStr = songDetails.joinWithSeparator("  •  ")
+        
+        
         // populate artist labels with updated metadata
-        self.artistLbl.text = player!.metadata.currentTrack?.artistName
-        self.songTitleLbl.text = player!.metadata.currentTrack?.name
+        self.songTitleLbl.text = songDetailsStr
+        
         
         dispatch_async(dispatch_get_main_queue(), {
             self.setFont()
