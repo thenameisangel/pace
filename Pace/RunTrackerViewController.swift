@@ -42,8 +42,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         
         loginToPlayer()
         
-        loadSongData()
-        
         // Set font
         distanceRunLbl.font = UIFont.boldSystemFontOfSize(85)
         timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
@@ -76,14 +74,26 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
                 artistLbl.text = "\(artist) feat. \(features)"
             }
         }
+        
+        
+//        let songTitle = player!.metadata.currentTrack?.name
+//        let artist = player!.metadata.currentTrack?.artistName
+//        
+//        songTitleLbl.text = songTitle
+//        artistLbl.text = artist
     }
     
     // MARK: Actions
     
     // End Run Button
     @IBAction func endRun(sender: AnyObject) {
+        // Stop music player
         player!.setIsPlaying(false, callback: nil)
+        
+        // Save run to Core Data
         SaveRun()
+        
+        // Segue to run summary
         self.performSegueWithIdentifier("endRunSegue", sender: self)
     }
     
@@ -195,6 +205,10 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
                 print("Unable to play song")
             }
         }
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.loadSongData()
+        })
         
     }
     

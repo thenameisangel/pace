@@ -26,7 +26,16 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seedTempo()
+        
+        // if no seed song is selected
+        if seedSong.count == 0 {
+            loadPlaylist()
+        
+        // if a seed song is selected
+        } else {
+            seedTempo()
+        }
+
     }
     
     
