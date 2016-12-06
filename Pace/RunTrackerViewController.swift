@@ -211,9 +211,8 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     // MARK: Audio
     func startNextSong() {
-        uri = playlist[0]["uri"] as! String
         
-        player!.playSpotifyURI(uri, startingWithIndex: 0, startingWithPosition: 0) { (error: NSError?) in
+        player!.playSpotifyURI(self.playlistUri, startingWithIndex: 0, startingWithPosition: 0) { (error: NSError?) in
             if error != nil {
                 print("Unable to play song")
             }
@@ -274,9 +273,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
 }
 
     
-
-
-
 // MARK: - CLLocationManagerDelegate
 extension RunTrackerViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
