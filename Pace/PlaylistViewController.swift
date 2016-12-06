@@ -17,6 +17,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     var seedSong: [String: AnyObject] = [:]
     var username = ""
     var playlistUri = ""
+    var playlistId = ""
     var snapshotId = ""
     var genre = "hip-hop"
     var tempo: Float = 180.0
@@ -101,7 +102,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
 
                     // update user id
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.playlistUri = playlistId[4]
+                        self.playlistUri = uri
+                        self.playlistId = playlistId[4]
                         print(self.playlistUri)
                         self.addTracksToPlaylist()
                     })
@@ -121,7 +123,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         // POST: Create a playlist on the current user's account
         
         // Create NSURL Object
-        let myUrl = NSURL(string: "https://api.spotify.com/v1/users/\(username)/playlists/\(playlistUri)/tracks");
+        let myUrl = NSURL(string: "https://api.spotify.com/v1/users/\(username)/playlists/\(playlistId)/tracks");
         
         // Creaste URL Request
         let request = NSMutableURLRequest(URL: myUrl!);
@@ -242,7 +244,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
 //                        print("Seed tempo: \(self.tempo)")
                         self.loadPlaylist()
-                        self.getUserId()
                     })
                 
                 // print error if request fails
@@ -336,6 +337,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     // reload table after json data is appended to playlist array
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
+                        self.getUserId()
                     })
                 }
                 
@@ -449,6 +451,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             
             // pass curated playlist to the run tracker
             nextScene.playlist = self.playlist
+            nextScene.playlistUri = self.playlistUri
         }
     }
 }

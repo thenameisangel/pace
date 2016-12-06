@@ -19,6 +19,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     let tokenSwapURL = "http://localhost:1234/swap"
     let tokenRefreshServiceURL = "http://localhost:1234/refresh"
     var playlist: [AnyObject] = []
+    var playlistUri = ""
     let auth: SPTAuth = SPTAuth.defaultInstance()
     
 
