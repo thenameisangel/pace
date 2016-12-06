@@ -28,6 +28,7 @@
 		2823C42F1DD97BF100C88BE1 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */; };
 		2823C43B1DDA754B00C88BE1 /* PlaylistSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */; };
 		3C569D611DEC0A7D00CFFF13 /* LineSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C569D601DEC0A7D00CFFF13 /* LineSeparatorView.swift */; };
+		3CE4861A1DF6367500EB592E /* SpotifyStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE486191DF6367500EB592E /* SpotifyStyleButton.swift */; };
 		44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */; };
 		44D298EE1DD8ECE8009D25AD /* PastRunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		2823C42E1DD97BF100C88BE1 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		2823C43A1DDA754B00C88BE1 /* PlaylistSongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistSongCell.swift; sourceTree = "<group>"; };
 		3C569D601DEC0A7D00CFFF13 /* LineSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSeparatorView.swift; sourceTree = "<group>"; };
+		3CE486191DF6367500EB592E /* SpotifyStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyStyleButton.swift; sourceTree = "<group>"; };
 		44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunsTableViewController.swift; sourceTree = "<group>"; };
 		44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 				44D298EB1DD8ECC6009D25AD /* PastRunsTableViewController.swift */,
 				44D298ED1DD8ECE8009D25AD /* PastRunTableViewCell.swift */,
 				3C569D601DEC0A7D00CFFF13 /* LineSeparatorView.swift */,
+				3CE486191DF6367500EB592E /* SpotifyStyleButton.swift */,
 				0B6E18F61DEE6459004FC750 /* Assets.xcassets */,
 			);
 			path = Pace;
@@ -326,6 +329,7 @@
 				2823C43B1DDA754B00C88BE1 /* PlaylistSongCell.swift in Sources */,
 				0BE040071DD1ACA60056A6A3 /* AppDelegate.swift in Sources */,
 				44D298EC1DD8ECC6009D25AD /* PastRunsTableViewController.swift in Sources */,
+				3CE4861A1DF6367500EB592E /* SpotifyStyleButton.swift in Sources */,
 				0B8C347B1DDAB4FE00123EBE /* RunSummaryViewController.swift in Sources */,
 				0BBEB2F01DD4FD520083C5F1 /* SearchViewController.swift in Sources */,
 				0BE0400F1DD1ACA60056A6A3 /* Pace.xcdatamodeld in Sources */,
