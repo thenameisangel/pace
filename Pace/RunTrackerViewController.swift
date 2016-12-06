@@ -41,18 +41,21 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.viewDidLoad()
         
         loginToPlayer()
-        
-        // Set font
-        distanceRunLbl.font = UIFont.boldSystemFontOfSize(85)
-        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
-        targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
-        songTitleLbl.font = UIFont(name: "Avenir", size: 11)
-        artistLbl.font = UIFont(name: "Avenir", size: 11)
+        setFont()
 
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setFont() {
+        // update font
+        distanceRunLbl.font = UIFont.boldSystemFontOfSize(85)
+        timeElapsedLbl.font = UIFont(name: "Avenir", size: 17)
+        targetPaceLbl.font = UIFont(name: "Avenir", size: 17)
+        songTitleLbl.font = UIFont(name: "Avenir", size: 11)
+        artistLbl.font = UIFont(name: "Avenir", size: 11)
     }
     
     // MARK: Actions
@@ -209,6 +212,11 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         // populate artist labels with updated metadata
         self.artistLbl.text = player!.metadata.currentTrack?.artistName
         self.songTitleLbl.text = player!.metadata.currentTrack?.name
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.setFont()
+        })
+        
     }
     
     @IBAction func btnPreviousSong(sender: AnyObject) {
