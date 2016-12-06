@@ -50,14 +50,20 @@ class NewRunViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // define stride length in inches
+        let strideLength = Float(enterHeightTxt.text!)! * 0.4
+        let tempo = 1/(Float(targetPace)!*63360*strideLength)
         if segue.identifier == "newRunPlaylistSegue"{
             let nextScene = segue.destinationViewController as? PlaylistViewController
             nextScene?.targetPace = targetPace
+            nextScene?.tempo = tempo
         }
         
         if segue.identifier == "searchResultsSegue" {
             let nextScene = segue.destinationViewController as? SearchViewController
             nextScene?.keywords = searchTermTxt.text!
+            nextScene?.strideLength = strideLength
+
         }
         
         if segue.identifier == "PastRuns"{

@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchResults: [AnyObject] = []
     var keywords = ""
     var seedSong: [String: AnyObject] = [:]
+    var strideLength: Float!
     
     //create temp list of song objects
     let songs: [[String]] = [["Usher", "Burn", "Confessions"],
@@ -156,6 +157,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let playlistVC = segue.destinationViewController as! PlaylistViewController
             let index = tableView.indexPathForSelectedRow!.row
             playlistVC.seedSong = self.searchResults[index] as! [String:AnyObject]
+            playlistVC.strideLength = strideLength
         }
     }
 
