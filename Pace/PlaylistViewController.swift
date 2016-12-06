@@ -26,9 +26,20 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         seedTempo()
-        getUserId()
     }
     
+    
+    func getDate () -> String {
+        let now = NSDate()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        let date = dateFormatter.stringFromDate(now)
+        print(date) // Mar 3, 2016
+        return date
+    }
     
     func createPlaylist() {
         // POST: Create a playlist on the current user's account
@@ -52,7 +63,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         // Add data to body of HTTP request
         do {
             // Create data for sending
-            let data = ["name": "Pace Sample Playlist", "public": false] as Dictionary
+            let date = getDate()
+            let data = ["name": "Pace: \(date)", "public": false] as NSDictionary
             
             // Convert to json
             let jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
@@ -230,6 +242,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
 //                        print("Seed tempo: \(self.tempo)")
                         self.loadPlaylist()
+                        self.getUserId()
                     })
                 
                 // print error if request fails
