@@ -57,9 +57,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 if let data = data {
                 do {
-                    // decode data and print as string
-//                    let responseString = String(data: data, encoding: NSUTF8StringEncoding) ?? "Data could not be printed"
-//                    print(responseString)
                     
                     if let results = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
             

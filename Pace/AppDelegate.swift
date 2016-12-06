@@ -42,16 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     auth.session = session
                 }
                 
-                
-//                //used for small key:value pairs
-//                let userDefaults = NSUserDefaults.standardUserDefaults()
-//                userDefaults.setBool(true, forKey: "premiumPurchased")
-//                
-//                //create session object and set it as a user default
-//                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-//                userDefaults.setObject(sessionData, forKey: "SpotifySession")
-//                userDefaults.synchronize()
-                
                 NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object:nil)
             })
         }

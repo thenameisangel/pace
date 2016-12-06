@@ -75,30 +75,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
                 let features = artists.componentsJoinedByString(", ")
                 artistLbl.text = "\(artist) feat. \(features)"
             }
-            
-            
-            for i in 0..<song.count {
-                
-                player?.queueSpotifyURI(String(playlist[i]["uri"])){ (error: NSError?) in
-                    if error != nil {
-                        print("Unable to play song")
-                    }
-    
-                
-               // queueSpotifyURI:(NSString *)spotifyUri callback:(SPTErrorableOperationCallback)block
-                
-                }
-            }
-            
         }
-        
-        
-        
-        //playlist[i]["uri"]
-        //player?.queueSpotifyURI(String!, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
-        
-        
-      //  queueSpotifyURI:(NSString *)spotifyUri callback:(SPTErrorableOperationCallback)block
     }
     
     // MARK: Actions

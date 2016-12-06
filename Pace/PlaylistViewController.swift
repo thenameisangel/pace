@@ -88,10 +88,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                 return
             }
             
-            // Print out response string
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
-            
             // Convert server json response to NSDictionary
             do {
                 if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
@@ -172,10 +168,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                 return
             }
             
-            // Print out response string
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
-            
             do {
                 if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
                     
@@ -226,11 +218,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                 print("error=\(error)")
                 return
             }
-            
-            // Print out response string
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
-            
             
             // Convert server json response to NSDictionary
             do {
@@ -379,11 +366,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                 print("error=\(error)")
                 return
             }
-            
-            // Print out response string
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
-            
+   
             // Convert server json response to NSDictionary
             do {
                 if let convertedJsonIntoDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
