@@ -25,13 +25,16 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-MB-SbE">
-                                <rect key="frame" x="28" y="64" width="544" height="496"/>
+                                <rect key="frame" x="28" y="64" width="544" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-TY-eB7">
-                                        <rect key="frame" x="0.0" y="0.0" width="544" height="171"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="190"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-pV-4x4">
-                                                <rect key="frame" x="0.0" y="0.0" width="544" height="131"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="wLg-aX-oe1"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Pace">
                                                         <attributes>
@@ -44,7 +47,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURATE A RUNNING PLAYLIST FOR ANY PACE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-NM-1Mk">
-                                                <rect key="frame" x="0.0" y="131" width="544" height="40"/>
+                                                <rect key="frame" x="0.0" y="150" width="544" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Hu9-je-COm"/>
                                                 </constraints>
@@ -61,7 +64,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-B9-OII">
-                                        <rect key="frame" x="0.0" y="196" width="544" height="70"/>
+                                        <rect key="frame" x="0.0" y="215" width="544" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-Cs-vYO">
                                                 <rect key="frame" x="0.0" y="0.0" width="262" height="70"/>
@@ -107,7 +110,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-Gu-h4V">
-                                        <rect key="frame" x="0.0" y="291" width="544" height="100"/>
+                                        <rect key="frame" x="0.0" y="310" width="544" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gUx-Tc-5ah">
                                                 <rect key="frame" x="0.0" y="0.0" width="258" height="100"/>
@@ -141,7 +144,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="210" id="JsN-vg-pOk"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                                         <state key="normal" title="SEARCH">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -163,10 +166,10 @@
                                                     <constraint firstAttribute="width" constant="28" id="2Yz-Tn-1cJ"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ch-RPA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ch-RPA">
                                                 <rect key="frame" x="286" y="0.0" width="258" height="100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-dH-CiS">
                                                         <rect key="frame" x="24" y="0.0" width="210" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="210" id="1er-BL-dHP"/>
@@ -183,14 +186,28 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pace (min/mi)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
-                                                        <rect key="frame" x="24" y="45" width="210" height="55"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pace (min/mi)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-j7-3Aw">
+                                                        <rect key="frame" x="24" y="35" width="210" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="210" id="uBM-0v-Twt"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN" customClass="SpotifyStyleButton" customModule="Pace" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="70" width="210" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="210" id="d1D-WD-yEa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
+                                                        <state key="normal" title="CREATE PLAYLIST">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
+                                                            <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -200,31 +217,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qgB-Fl-fiN">
-                                        <rect key="frame" x="122" y="416" width="300" height="80"/>
+                                        <rect key="frame" x="213" y="435" width="119" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-9t-hoN" customClass="SpotifyStyleButton" customModule="Pace" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="piY-0r-QdL"/>
-                                                    <constraint firstAttribute="width" constant="210" id="uEu-hd-rJz"/>
-                                                    <constraint firstAttribute="height" constant="40" id="zx9-FW-7Lg"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                                <state key="normal" title="GENERATE PLAYLIST">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="uEu-hd-rJz"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="viewNewPlaylist:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sYi-yF-7ud"/>
-                                                    <action selector="viewPastRuns:" destination="py8-Kg-TYZ" eventType="touchUpInside" id="sxJ-3q-J6W"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-HA-59e">
-                                                <rect key="frame" x="0.0" y="40" width="300" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="6ug-Qe-RhM"/>
                                                     <constraint firstAttribute="width" constant="210" id="Sfg-fC-lmh"/>
@@ -261,7 +257,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qby-Fc-gCy" firstAttribute="top" secondItem="c5Z-MB-SbE" secondAttribute="bottom" constant="40" id="DpV-rA-2Oy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c5Z-MB-SbE" secondAttribute="trailing" constant="8" id="PwZ-UI-hjO"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="leading" secondItem="pa6-79-Jbz" secondAttribute="leadingMargin" constant="8" id="brb-Gv-8V5"/>
                             <constraint firstItem="c5Z-MB-SbE" firstAttribute="top" secondItem="ye1-Za-ETX" secondAttribute="bottom" id="j0f-hi-sva"/>
@@ -1012,7 +1007,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXx-Fc-Yu1" customClass="SpotifyStyleButton" customModule="Pace" customModuleProvider="target">
                                 <rect key="frame" x="40" y="261" width="521" height="77"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="LOGIN WITH SPOTIFY"/>
                                 <connections>
                                     <action selector="loginWithSpotify:" destination="ujJ-ph-9xV" eventType="touchUpInside" id="CYD-cU-62D"/>
@@ -1021,7 +1016,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Must be a premium account holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3Z-1H-Ggs">
                                 <rect key="frame" x="40" y="346" width="521" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="9"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1029,11 +1024,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WXx-Fc-Yu1" firstAttribute="centerY" secondItem="5L6-rI-Wng" secondAttribute="centerY" id="6BR-De-mST"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WXx-Fc-Yu1" secondAttribute="trailing" constant="19" id="NwA-0J-a7o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXx-Fc-Yu1" secondAttribute="trailing" constant="25" id="NwA-0J-a7o"/>
                             <constraint firstItem="WXx-Fc-Yu1" firstAttribute="centerX" secondItem="5L6-rI-Wng" secondAttribute="centerX" id="gFV-dq-c1X"/>
                             <constraint firstItem="l3Z-1H-Ggs" firstAttribute="centerX" secondItem="5L6-rI-Wng" secondAttribute="centerX" id="muo-S4-iYp"/>
                             <constraint firstItem="l3Z-1H-Ggs" firstAttribute="top" secondItem="WXx-Fc-Yu1" secondAttribute="bottom" constant="8" id="raW-ov-RQ3"/>
-                            <constraint firstItem="WXx-Fc-Yu1" firstAttribute="leading" secondItem="5L6-rI-Wng" secondAttribute="leadingMargin" constant="20" id="wlF-nm-w08"/>
+                            <constraint firstItem="WXx-Fc-Yu1" firstAttribute="leading" secondItem="5L6-rI-Wng" secondAttribute="leadingMargin" constant="25" id="wlF-nm-w08"/>
                             <constraint firstItem="l3Z-1H-Ggs" firstAttribute="width" secondItem="WXx-Fc-Yu1" secondAttribute="width" id="ytU-L1-J4C"/>
                         </constraints>
                     </view>
