@@ -55,34 +55,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         super.didReceiveMemoryWarning()
     }
     
-    func loadSongData() {
-        let song = playlist[0]
-        
-        // Populate song label
-        songTitleLbl.text = song["title"] as? String
-        
-        // Populate artist label
-        if (song["artists"] != nil) {
-            let artists = song["artists"] as! NSArray
-            
-            // Handle multiple artists
-            if artists.count < 1 {
-                artistLbl.text = artists[0] as! String
-            } else {
-                let artist = artists[0] as! String
-                let features = artists.componentsJoinedByString(", ")
-                artistLbl.text = "\(artist) feat. \(features)"
-            }
-        }
-        
-        
-//        let songTitle = player!.metadata.currentTrack?.name
-//        let artist = player!.metadata.currentTrack?.artistName
-//        
-//        songTitleLbl.text = songTitle
-//        artistLbl.text = artist
-    }
-    
     // MARK: Actions
     
     // End Run Button
@@ -206,10 +178,6 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
             }
         }
         
-        dispatch_async(dispatch_get_main_queue(), {
-            self.loadSongData()
-        })
-        
     }
     
     func loginToPlayer() {
@@ -234,6 +202,13 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveError error: NSError!) {
         print(error)
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeMetadata metadata: SPTPlaybackMetadata!) {
+        
+        // populate artist labels with updated metadata
+        self.artistLbl.text = player!.metadata.currentTrack?.artistName
+        self.songTitleLbl.text = player!.metadata.currentTrack?.name
     }
     
     @IBAction func btnPreviousSong(sender: AnyObject) {
