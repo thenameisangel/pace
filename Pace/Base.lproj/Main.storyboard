@@ -28,10 +28,10 @@
                                 <rect key="frame" x="28" y="64" width="544" height="506"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-TY-eB7">
-                                        <rect key="frame" x="0.0" y="0.0" width="544" height="221"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="141"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-pV-4x4">
-                                                <rect key="frame" x="0.0" y="0.0" width="544" height="181"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="101"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Pace">
                                                         <attributes>
@@ -44,7 +44,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURATE A RUNNING PLAYLIST FOR ANY PACE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-NM-1Mk">
-                                                <rect key="frame" x="0.0" y="181" width="544" height="40"/>
+                                                <rect key="frame" x="0.0" y="101" width="544" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Hu9-je-COm"/>
                                                 </constraints>
@@ -61,49 +61,56 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-B9-OII">
-                                        <rect key="frame" x="0.0" y="246" width="544" height="70"/>
+                                        <rect key="frame" x="0.0" y="166" width="544" height="150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-Cs-vYO">
-                                                <rect key="frame" x="0.0" y="0.0" width="262" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A GENRE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1m-3c-n0E">
-                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="8Hl-HL-0hc"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Genre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-EV-sMW">
-                                                        <rect key="frame" x="0.0" y="40" width="262" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="30h-zW-H53"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fth-FZ-luw">
+                                                        <rect key="frame" x="0.0" y="34" width="262" height="116"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="py8-Kg-TYZ" id="50b-If-qas"/>
+                                                            <outlet property="delegate" destination="py8-Kg-TYZ" id="qfz-fd-Lrr"/>
+                                                        </connections>
+                                                    </pickerView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRU-g1-TZ6">
-                                                <rect key="frame" x="282" y="0.0" width="262" height="70"/>
+                                                <rect key="frame" x="282" y="0.0" width="262" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT YOUR HEIGHT" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-65-Juz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ENW-EW-bQB"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-Mu-oaU">
-                                                        <rect key="frame" x="0.0" y="40" width="262" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="hLf-Wf-wFC"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjY-EM-rNy">
+                                                        <rect key="frame" x="0.0" y="34" width="262" height="116"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="py8-Kg-TYZ" id="fTL-of-VVP"/>
+                                                            <outlet property="delegate" destination="py8-Kg-TYZ" id="Fr0-cf-Aeg"/>
+                                                        </connections>
+                                                    </pickerView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="XGW-65-Juz" firstAttribute="top" secondItem="zRU-g1-TZ6" secondAttribute="top" id="fbH-4I-nYO"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="tQm-sE-Ata"/>
+                                            <constraint firstAttribute="height" constant="150" id="tQm-sE-Ata"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-Gu-h4V">
@@ -262,8 +269,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Run" id="7u3-Kh-Twi"/>
                     <connections>
-                        <outlet property="enterHeightTxt" destination="2jR-Mu-oaU" id="nUC-NU-V39"/>
                         <outlet property="enterTargetPaceTxt" destination="NaW-j7-3Aw" id="jPK-n2-34k"/>
+                        <outlet property="genrePicker" destination="fth-FZ-luw" id="oB5-oN-rgj"/>
+                        <outlet property="heightPicker" destination="IjY-EM-rNy" id="VrX-0x-kvn"/>
                         <outlet property="navBar" destination="7u3-Kh-Twi" id="hgP-Fl-p8c"/>
                         <outlet property="newPlaylistBtn" destination="PUh-9t-hoN" id="NoC-PS-QGm"/>
                         <outlet property="searchTermTxt" destination="Lal-vu-u9U" id="63Q-hC-4IM"/>
