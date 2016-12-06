@@ -19,23 +19,23 @@ class SpotifyStyleButton: UIButton {
         //move the initial point of the path
         //to the start of the horizontal stroke
         path.moveToPoint(CGPoint(
-            x:bounds.width * 0.9,
+            x:bounds.width * 0.85,
             y:0))
         
         path.addLineToPoint(CGPoint(
-            x:bounds.width * 0.1,
+            x:bounds.width * 0.15,
             y:0))
         
         path.addArcWithCenter(CGPoint(
-            x:bounds.width * 0.1,
+            x:bounds.width * 0.15,
             y:bounds.height/2), radius: CGFloat(bounds.height/2), startAngle: CGFloat(3*M_PI/2), endAngle: CGFloat(M_PI/2), clockwise: false)
         
         path.addLineToPoint(CGPoint(
-            x:bounds.width * 0.9,
+            x:bounds.width * 0.85,
             y:bounds.height))
         
         path.addArcWithCenter(CGPoint(
-            x:bounds.width * 0.9,
+            x:bounds.width * 0.85,
             y:bounds.height/2), radius: CGFloat(bounds.height/2), startAngle: CGFloat(M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: false)
         
         //set the stroke color
