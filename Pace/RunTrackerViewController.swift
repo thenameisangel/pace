@@ -82,6 +82,7 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
     
     // End Run Button
     @IBAction func endRun(sender: AnyObject) {
+        player!.setIsPlaying(false, callback: nil)
         SaveRun()
         self.performSegueWithIdentifier("endRunSegue", sender: self)
     }
@@ -211,13 +212,10 @@ class RunTrackerViewController: UIViewController, SPTAudioStreamingDelegate, SPT
         player?.delegate = self
         player?.playbackDelegate = self
         player?.loginWithAccessToken(auth.session.accessToken)
-    
-        
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
         startNextSong()
-        print("Successful login!")
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveError error: NSError!) {
